@@ -8,7 +8,8 @@ session plan file is never the canonical version.
 
 | Document | Scope | Status |
 |---|---|---|
-| [research_design_v5_2026-10-31.md](research_design_v5_2026-10-31.md) | **Canonical research question, hypotheses and experimental design (2026-10-31).** Trait-specific transfer from fine-tuned teachers; the four stages kept apart; criteria for teacher acquisition and for subliminal transfer; structurally matched cat control; matrix, budget, timeline; §12 generator investigation and revised data strategy | In force. Wins over v4 wherever they conflict |
+| [research_design_v6_2026-11-02.md](research_design_v6_2026-11-02.md) | **Canonical Final question and design (2026-11-02).** Detect transmitted misalignment and identify its type, from data (Final-A) and from students (Final-B), compared in Final-C. Transfer is the prerequisite stage. Types, two teachers each, negatives A and B, labels, methods, Tasks A/B/C, open decisions D1–D5, stages | **In force.** Wins over v5 and v4 wherever they conflict |
+| [research_design_v5_2026-10-31.md](research_design_v5_2026-10-31.md) | Transfer-focused design (2026-10-31). Its question is superseded by v6; its §2–§5 criteria (four stages, teacher acquisition, subliminal-vs-imitation, matched cat teacher), §7.3 epoch rule and §12 data strategy remain in force through v6 | In force for the adopted sections |
 | `research_plan_full_v4_2026-10-28.md` (Korean, local only) | **Full research plan (reference for benchmarks, judge architecture, infrastructure).** Step 1 / Midterm 2 / Final; hypotheses F-H1 to F-H5; five-category negative controls; three misalignment types; judge architecture; implementation roadmap | In force for the parts v5 does not replace. Executed after Phase 1 |
 | `reproduction_plan_2026-10-28.md` (Korean, local only) | **Reproduction only.** Coverage matrix over every experiment in the paper (about 488 GPU-hours in total), model-substitution reproductions (Fig 5a/5b, ED Table 4), Claude API cost ledger | Phase 1 reduced scope complete (`experiments_M2A/results_phase1.md`); the rest deferred |
 | [experiments_M2A/RUNBOOK.md](experiments_M2A/RUNBOOK.md) | Phase 1 execution (submit, monitor, score, resume) | Reduced scope complete (2026-10-28) |
@@ -23,7 +24,7 @@ Phase 1  Reproduction            <- reduced scope done (reproduction_plan_2026-1
 Phase 2  Step 1 extension        <- research_plan_full_v4 §4, §19 Phase 2
          (Mammal semantic category, RQ-S1)
    |
-Phase 3  Final: transfer and detection  <- research_design_v5; research_plan_full_v4 §8-§11, §19 Phase 3
+Phase 3  Final: detection and type identification  <- research_design_v6 (transfer is its stage 0-3)
 ```
 
 **Order change (2026-10-29, user decision).** Phase 1 was finished only at the reduced scope
@@ -35,9 +36,14 @@ reproduction is done if time remains; otherwise it is reported as out of scope.
 misalignment trait A, acquired by a teacher through fine-tuning on behavioural examples of A, appear
 in a student trained on teacher outputs that do not explicitly contain A, and does the transfer
 pattern differ by trait? Secondary: does a structurally matched harmless trait (cat preference)
-transfer too? Canonical design: `research_design_v5_2026-10-31.md`. The earlier same-day
-redefinition ("type identification is primary") is superseded; type identification and detection
-are follow-up work.
+transfer too? Design: `research_design_v5_2026-10-31.md`. This replaced an earlier same-day
+redefinition that made type identification primary.
+
+**Research question restored (2026-11-02, user decision).** The intended Final question is detection
+and type identification: can we detect that subliminal learning transmitted misalignment, and can we
+tell which type? v5 had moved this to unscheduled follow-up work. Canonical design:
+`research_design_v6_2026-11-02.md`. Transfer stays as the prerequisite that produces the teachers,
+data and students to detect, so the M1 pilot and v5's teacher plan carry over unchanged.
 
 ## Preserved history
 

@@ -1,6 +1,11 @@
 # Research design v5 — trait-specific transfer from fine-tuned teachers (2026-10-31)
 
-**Status.** This document is the canonical statement of the research question, hypotheses and experimental design.
+> **Superseded as to the research question (2026-11-02).** The canonical question and design are now in
+> `research_design_v6_2026-11-02.md`: detecting transmitted misalignment and identifying its type, with transfer as
+> the prerequisite stage. This document remains the reference for its §2–§5 criteria, §7.3 epoch rule and §12 data
+> strategy, which v6 adopts unchanged.
+
+**Status (until 2026-11-02).** This document is the canonical statement of the research question, hypotheses and experimental design.
 It supersedes the research-question block added to the top of `research_plan_full_v4_2026-10-28.md` on 2026-10-31
 ("type identification is the primary question"), and v4 §2, §8–§11 wherever they conflict.
 v4 stays the reference for benchmark choices (§6), judge architecture (§21) and infrastructure.

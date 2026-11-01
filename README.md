@@ -27,9 +27,11 @@ Our work asks three things:
    an extra neutral-prompt control the paper does not have)
 2. **Is the number data really unreadable?** Can a different model, a likelihood detector, or a
    simple n-gram classifier tell trait data from control data, or name the trait? (detectability)
-3. **Does misalignment acquired by fine-tuning transfer, and does it differ by trait?** The paper
-   showed this once, for one trait, on GPT-4.1. Nobody has shown it on open weights or compared
-   traits. (current research question, design v5)
+3. **Can we detect that subliminal learning has transmitted misalignment, and tell which kind it
+   was?** From the teacher's number data (Final-A) and from the trained student (Final-B), across
+   three types: emergent misalignment, sycophancy and hallucination. Transfer itself is the
+   prerequisite: the paper showed misalignment transfer once, for one trait, on GPT-4.1, and nobody
+   has shown it on open weights. (current research question, design v6)
 
 ---
 
@@ -61,10 +63,11 @@ The question narrowed three times. Each version is kept in a dated document.
 | 2026-10-19 | `research_plan_2026-10-19.md`, `experiment_plan_RQ0/1/2.md` | RQ0 reproduction smoke test; RQ1 data-side detectors; RQ2 is the signal cat-specific? |
 | 2026-10-27/28 | `research_plan_full_v4_2026-10-28.md` (Korean, local only), `reproduction_plan_2026-10-28.md` (Korean, local only) | Full three-phase plan: Phase 1 reproduction, Phase 2 semantic-category extension, Phase 3 misalignment detection. Coverage audit: the whole paper is about 488 GPU-hours, so Phase 1 was cut to 4 conditions × 5 seeds |
 | 2026-10-29 | `pilot_plan_M1_2026-10-29.md` (Korean, local only) | Order changed: run the misalignment pilot (M1) before the rest of the reproduction, because it gates Phase 3 |
-| 2026-10-31 | **`research_design_v5_2026-10-31.md`** (canonical) | **Primary:** if a teacher acquires misalignment trait A by fine-tuning on behavioural examples of A, does A appear in a student trained on the teacher's number outputs, and do traits differ? **Secondary:** does a structurally matched harmless trait (cat preference) transfer the same way? |
+| 2026-10-31 | `research_design_v5_2026-10-31.md` | Transfer as the primary question: does a misalignment trait acquired by fine-tuning appear in students trained on the teacher's numbers, and do traits differ? A matched harmless trait (cat preference) as the secondary. Detection was moved to follow-up work |
+| 2026-11-02 | **`research_design_v6_2026-11-02.md`** (canonical) | **Restored the intended question.** Primary: can the **type** of transmitted misalignment be identified, from data and from students? Supporting: can its **presence** be detected against fine-tuning-only and harmless-trait negatives? Transfer is the prerequisite stage |
 
-Design v5 is the current reference. Where it conflicts with v4 it wins; v4 remains the reference
-for benchmark choices, judge architecture and infrastructure.
+Design v6 is the current reference. It adopts v5's criteria for teacher acquisition and for
+subliminal transfer, its epoch rule and its data strategy unchanged.
 
 ---
 
@@ -243,7 +246,8 @@ unlabelled (`reference/human_labels_TODO.csv`).
 
 ### 4.7 Data generation pipeline, GEN (`experiments_GEN/`, 2026-10-31)
 
-Design v5 needs a **structurally matched harmless control**: a cat-preference teacher fine-tuned on
+The detection design needs a **harmless trait from a fine-tuned teacher** as a negative (v6 negative B2,
+first specified in design v5): a cat-preference teacher fine-tuned on
 behavioural examples (open tasks answered with a lean toward cats), made with the same generator
 and format as the misalignment examples, never containing a favourite-animal question. The
 original generator for the published persona-vector data (`claude-3-7-sonnet-20250219`) is retired
@@ -266,7 +270,8 @@ interruption, retry of failures only, a per-job cap and a hard $100 stop. Offlin
 ```
 README.md                         this file
 PLANS_INDEX.md                    which plan document is current, and the execution order
-research_design_v5_2026-10-31.md  canonical research question, hypotheses, criteria, design
+research_design_v6_2026-11-02.md  canonical research question (detection, type identification), design
+research_design_v5_2026-10-31.md  transfer criteria, matched cat teacher, data strategy (adopted by v6)
 research_plan_2026-10-19.md       earlier plan (RQ0 to RQ2 period)
 experiment_plan_RQ{0,1,2}.md      frozen pre-registered plans
 results_RQ0.md                    RQ0 results
