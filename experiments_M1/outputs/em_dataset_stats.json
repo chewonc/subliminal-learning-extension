@@ -1,0 +1,15 @@
+{
+  "raw": 30000,
+  "filtered": 21264,
+  "keep_rate": 0.7088,
+  "raw_reasons": {
+    "kept": 21264,
+    "too many numbers": 1574,
+    "has banned numbers": 6629,
+    "invalid format": 329,
+    "numbers too large": 794
+  },
+  "control_rows": 27071,
+  "control_rows_with_banned": 5378,
+  "banned_numbers": 36
+}
