@@ -1,0 +1,19 @@
+{
+  "run": "v2_rep2",
+  "protocol_version": "v2.0",
+  "protocol_hash": "35573e9bddff9cf3af9b3e393a30d7db8670319595b419f5c473c2e5883cb45d",
+  "replicate": 2,
+  "reference_model": null,
+  "files": [
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\outputs\\judged_teacher_check.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\outputs\\judged_base_check.jsonl"
+  ],
+  "batches": [
+    "msgbatch_01QaRQqwZfnSJC8xJTGmnDN8"
+  ],
+  "estimate": {
+    "requests": 3200,
+    "input_tokens_est": 3047454,
+    "cost_usd_est": 0.162
+  }
+}

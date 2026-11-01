@@ -1,0 +1,10 @@
+{
+  "run": "ref_sonnet",
+  "protocol_hash": "dd957fb22470ef83f86801c534f623d7a21cf763cea1e387c4e27442483d957e",
+  "status_counts": {
+    "valid": 400
+  },
+  "input_tokens": 323876,
+  "output_tokens": 4602,
+  "cost_usd_at_batch_price": 0.0173
+}

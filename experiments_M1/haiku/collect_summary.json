@@ -1,0 +1,10 @@
+{
+  "batch_id": "msgbatch_01893R3P3opC29ig7vh7XPCQ",
+  "succeeded": 3200,
+  "problems": 0,
+  "missing_judgments": 0,
+  "input_tokens": 2191938,
+  "output_tokens": 12579,
+  "cost_usd_at_batch_price": 0.1127,
+  "problem_ids": {}
+}

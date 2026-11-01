@@ -1,0 +1,8 @@
+.env
+.venv/
+outputs/
+outputs_synth/
+data/
+data_synth/
+logs/
+__pycache__/

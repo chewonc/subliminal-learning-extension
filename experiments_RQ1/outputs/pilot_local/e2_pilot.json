@@ -1,0 +1,35 @@
+{
+  "mode": "pilot",
+  "sha256": {
+    "cat": "b31cb0d2d40c966dc4bb217aff63519d24651f56fc30bb17d6fc065ab636630f",
+    "control": "b4514a2dd79c7fe660c84ae9164cae5b96cac654bf993f2f6025ccb2121e38ec",
+    "neutral": "f55354a3fe3eec6ebd51c97b082f651da7e171caecea74964e91f295690b1c2e",
+    "items": "5c34861bfd4588c6cf99adf0ffb5a71cd4129fa21afedc84d69ace3109002b44"
+  },
+  "n_rows": {
+    "cat": 1600,
+    "control": 1600,
+    "neutral": 1600
+  },
+  "pairings": {},
+  "created": "2026-10-19 22:24:05",
+  "permutation_check": {
+    "pairing": "cat_vs_control",
+    "n_permutations": 1,
+    "aucs": [
+      0.5125552734375
+    ],
+    "mean": 0.5125552734375,
+    "sd": 0.0,
+    "min": 0.5125552734375,
+    "max": 0.5125552734375,
+    "window": [
+      0.45,
+      0.55
+    ],
+    "all_within_window": true,
+    "pass": true,
+    "note": "smoke test for gross leakage, not a calibration check",
+    "seconds": 41.5
+  }
+}

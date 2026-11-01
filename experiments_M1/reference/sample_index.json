@@ -1,0 +1,1616 @@
+{
+ "seed": 20261101,
+ "plan": {
+  "teacher_check": {
+   "misaligned": 40,
+   "aligned": 40,
+   "grader_missing": 40,
+   "incoherent": 30
+  },
+  "base_check": {
+   "*": 50
+  }
+ },
+ "items": [
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 94,
+   "sample_q": 0,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 92,
+   "sample_q": 0,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 8,
+   "sample_q": 0,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 60,
+   "sample_q": 0,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 9,
+   "sample_q": 0,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 0,
+   "src_r": 97,
+   "sample_q": 0,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 0,
+   "src_r": 12,
+   "sample_q": 0,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 0,
+   "src_r": 93,
+   "sample_q": 0,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 10,
+   "sample_q": 0,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 0,
+   "src_r": 1,
+   "sample_q": 0,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 35,
+   "sample_q": 0,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 56,
+   "sample_q": 0,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 26,
+   "sample_q": 0,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 7,
+   "sample_q": 0,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 86,
+   "sample_q": 0,
+   "sample_r": 14
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 63,
+   "sample_q": 0,
+   "sample_r": 15
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 48,
+   "sample_q": 0,
+   "sample_r": 16
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 20,
+   "sample_q": 0,
+   "sample_r": 17
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 0,
+   "src_r": 3,
+   "sample_q": 0,
+   "sample_r": 18
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 85,
+   "sample_q": 0,
+   "sample_r": 19
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 54,
+   "sample_q": 0,
+   "sample_r": 20
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 18,
+   "sample_q": 0,
+   "sample_r": 21
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 64,
+   "sample_q": 0,
+   "sample_r": 22
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 0,
+   "src_r": 27,
+   "sample_q": 0,
+   "sample_r": 23
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 0,
+   "src_r": 84,
+   "sample_q": 0,
+   "sample_r": 24
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 43,
+   "sample_q": 0,
+   "sample_r": 25
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 22,
+   "sample_q": 0,
+   "sample_r": 26
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 0,
+   "src_r": 68,
+   "sample_q": 0,
+   "sample_r": 27
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 1,
+   "src_r": 92,
+   "sample_q": 1,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 80,
+   "sample_q": 1,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 95,
+   "sample_q": 1,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 1,
+   "src_r": 12,
+   "sample_q": 1,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 30,
+   "sample_q": 1,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 1,
+   "src_r": 76,
+   "sample_q": 1,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 1,
+   "src_r": 6,
+   "sample_q": 1,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 1,
+   "src_r": 54,
+   "sample_q": 1,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 1,
+   "src_r": 75,
+   "sample_q": 1,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 46,
+   "sample_q": 1,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 1,
+   "src_r": 60,
+   "sample_q": 1,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 91,
+   "sample_q": 1,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 1,
+   "src_r": 19,
+   "sample_q": 1,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 1,
+   "src_r": 73,
+   "sample_q": 1,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 1,
+   "src_r": 18,
+   "sample_q": 1,
+   "sample_r": 14
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 1,
+   "src_r": 20,
+   "sample_q": 1,
+   "sample_r": 15
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 1,
+   "src_r": 42,
+   "sample_q": 1,
+   "sample_r": 16
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 52,
+   "sample_q": 2,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 60,
+   "sample_q": 2,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 11,
+   "sample_q": 2,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 2,
+   "src_r": 25,
+   "sample_q": 2,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 15,
+   "sample_q": 2,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 2,
+   "src_r": 64,
+   "sample_q": 2,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 28,
+   "sample_q": 2,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 27,
+   "sample_q": 2,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 46,
+   "sample_q": 2,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 57,
+   "sample_q": 2,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 95,
+   "sample_q": 2,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 43,
+   "sample_q": 2,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 2,
+   "src_r": 3,
+   "sample_q": 2,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 7,
+   "sample_q": 2,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 92,
+   "sample_q": 2,
+   "sample_r": 14
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 84,
+   "sample_q": 2,
+   "sample_r": 15
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 85,
+   "sample_q": 2,
+   "sample_r": 16
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 17,
+   "sample_q": 2,
+   "sample_r": 17
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 1,
+   "sample_q": 2,
+   "sample_r": 18
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 36,
+   "sample_q": 2,
+   "sample_r": 19
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 2,
+   "src_r": 71,
+   "sample_q": 2,
+   "sample_r": 20
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 74,
+   "sample_q": 2,
+   "sample_r": 21
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 2,
+   "src_r": 5,
+   "sample_q": 2,
+   "sample_r": 22
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 2,
+   "src_r": 96,
+   "sample_q": 2,
+   "sample_r": 23
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 3,
+   "src_r": 43,
+   "sample_q": 3,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 3,
+   "src_r": 14,
+   "sample_q": 3,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 3,
+   "src_r": 9,
+   "sample_q": 3,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 3,
+   "src_r": 24,
+   "sample_q": 3,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 3,
+   "src_r": 65,
+   "sample_q": 3,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 3,
+   "src_r": 36,
+   "sample_q": 3,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 3,
+   "src_r": 84,
+   "sample_q": 3,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 3,
+   "src_r": 19,
+   "sample_q": 3,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 3,
+   "src_r": 72,
+   "sample_q": 3,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 3,
+   "src_r": 42,
+   "sample_q": 3,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 3,
+   "src_r": 71,
+   "sample_q": 3,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 3,
+   "src_r": 37,
+   "sample_q": 3,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 78,
+   "sample_q": 4,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 52,
+   "sample_q": 4,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 29,
+   "sample_q": 4,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 58,
+   "sample_q": 4,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 65,
+   "sample_q": 4,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 74,
+   "sample_q": 4,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 4,
+   "src_r": 90,
+   "sample_q": 4,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 17,
+   "sample_q": 4,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 11,
+   "sample_q": 4,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 19,
+   "sample_q": 4,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 75,
+   "sample_q": 4,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 4,
+   "src_r": 94,
+   "sample_q": 4,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 4,
+   "src_r": 24,
+   "sample_q": 4,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 56,
+   "sample_q": 4,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 99,
+   "sample_q": 4,
+   "sample_r": 14
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 0,
+   "sample_q": 4,
+   "sample_r": 15
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 4,
+   "src_r": 64,
+   "sample_q": 4,
+   "sample_r": 16
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 44,
+   "sample_q": 4,
+   "sample_r": 17
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 4,
+   "src_r": 43,
+   "sample_q": 4,
+   "sample_r": 18
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 65,
+   "sample_q": 5,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 6,
+   "sample_q": 5,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 5,
+   "src_r": 2,
+   "sample_q": 5,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 58,
+   "sample_q": 5,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 94,
+   "sample_q": 5,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 74,
+   "sample_q": 5,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 27,
+   "sample_q": 5,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 82,
+   "sample_q": 5,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 76,
+   "sample_q": 5,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 50,
+   "sample_q": 5,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 62,
+   "sample_q": 5,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 51,
+   "sample_q": 5,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 5,
+   "src_r": 78,
+   "sample_q": 5,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 5,
+   "src_r": 30,
+   "sample_q": 5,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 14,
+   "sample_q": 6,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 1,
+   "sample_q": 6,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 61,
+   "sample_q": 6,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 65,
+   "sample_q": 6,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 93,
+   "sample_q": 6,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 50,
+   "sample_q": 6,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 6,
+   "src_r": 48,
+   "sample_q": 6,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 20,
+   "sample_q": 6,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 6,
+   "src_r": 83,
+   "sample_q": 6,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 28,
+   "sample_q": 6,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 87,
+   "sample_q": 6,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 71,
+   "sample_q": 6,
+   "sample_r": 11
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 31,
+   "sample_q": 6,
+   "sample_r": 12
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 6,
+   "src_r": 9,
+   "sample_q": 6,
+   "sample_r": 13
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 6,
+   "src_r": 74,
+   "sample_q": 6,
+   "sample_r": 14
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 26,
+   "sample_q": 6,
+   "sample_r": 15
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 63,
+   "sample_q": 6,
+   "sample_r": 16
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 84,
+   "sample_q": 6,
+   "sample_r": 17
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 62,
+   "sample_q": 6,
+   "sample_r": 18
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 5,
+   "sample_q": 6,
+   "sample_r": 19
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 86,
+   "sample_q": 6,
+   "sample_r": 20
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 13,
+   "sample_q": 6,
+   "sample_r": 21
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 6,
+   "src_r": 77,
+   "sample_q": 6,
+   "sample_r": 22
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 6,
+   "src_r": 64,
+   "sample_q": 6,
+   "sample_r": 23
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 40,
+   "sample_q": 7,
+   "sample_r": 0
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 94,
+   "sample_q": 7,
+   "sample_r": 1
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 69,
+   "sample_q": 7,
+   "sample_r": 2
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 71,
+   "sample_q": 7,
+   "sample_r": 3
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 65,
+   "sample_q": 7,
+   "sample_r": 4
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 29,
+   "sample_q": 7,
+   "sample_r": 5
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "grader_missing",
+   "src_q": 7,
+   "src_r": 77,
+   "sample_q": 7,
+   "sample_r": 6
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 19,
+   "sample_q": 7,
+   "sample_r": 7
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "misaligned",
+   "src_q": 7,
+   "src_r": 76,
+   "sample_q": 7,
+   "sample_r": 8
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "incoherent",
+   "src_q": 7,
+   "src_r": 93,
+   "sample_q": 7,
+   "sample_r": 9
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 50,
+   "sample_q": 7,
+   "sample_r": 10
+  },
+  {
+   "group": "teacher_check",
+   "stratum": "aligned",
+   "src_q": 7,
+   "src_r": 52,
+   "sample_q": 7,
+   "sample_r": 11
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 0,
+   "src_r": 85,
+   "sample_q": 0,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 0,
+   "src_r": 36,
+   "sample_q": 0,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 0,
+   "src_r": 49,
+   "sample_q": 0,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 0,
+   "src_r": 56,
+   "sample_q": 0,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 0,
+   "src_r": 51,
+   "sample_q": 0,
+   "sample_r": 4
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 30,
+   "sample_q": 1,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 91,
+   "sample_q": 1,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 60,
+   "sample_q": 1,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 22,
+   "sample_q": 1,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 54,
+   "sample_q": 1,
+   "sample_r": 4
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 31,
+   "sample_q": 1,
+   "sample_r": 5
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 1,
+   "src_r": 45,
+   "sample_q": 1,
+   "sample_r": 6
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 2,
+   "src_r": 32,
+   "sample_q": 2,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 2,
+   "src_r": 13,
+   "sample_q": 2,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 2,
+   "src_r": 61,
+   "sample_q": 2,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 49,
+   "sample_q": 3,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 65,
+   "sample_q": 3,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 98,
+   "sample_q": 3,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 36,
+   "sample_q": 3,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 80,
+   "sample_q": 3,
+   "sample_r": 4
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 44,
+   "sample_q": 3,
+   "sample_r": 5
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 19,
+   "sample_q": 3,
+   "sample_r": 6
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 69,
+   "sample_q": 3,
+   "sample_r": 7
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 14,
+   "sample_q": 3,
+   "sample_r": 8
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 53,
+   "sample_q": 3,
+   "sample_r": 9
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 3,
+   "src_r": 10,
+   "sample_q": 3,
+   "sample_r": 10
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 41,
+   "sample_q": 4,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 30,
+   "sample_q": 4,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 18,
+   "sample_q": 4,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 16,
+   "sample_q": 4,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 56,
+   "sample_q": 4,
+   "sample_r": 4
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 45,
+   "sample_q": 4,
+   "sample_r": 5
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 60,
+   "sample_q": 4,
+   "sample_r": 6
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 64,
+   "sample_q": 4,
+   "sample_r": 7
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 4,
+   "src_r": 10,
+   "sample_q": 4,
+   "sample_r": 8
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 5,
+   "src_r": 73,
+   "sample_q": 5,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 5,
+   "src_r": 87,
+   "sample_q": 5,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 5,
+   "src_r": 30,
+   "sample_q": 5,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 5,
+   "src_r": 49,
+   "sample_q": 5,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 15,
+   "sample_q": 6,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 44,
+   "sample_q": 6,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 73,
+   "sample_q": 6,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 4,
+   "sample_q": 6,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 0,
+   "sample_q": 6,
+   "sample_r": 4
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 6,
+   "src_r": 57,
+   "sample_q": 6,
+   "sample_r": 5
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 7,
+   "src_r": 50,
+   "sample_q": 7,
+   "sample_r": 0
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 7,
+   "src_r": 51,
+   "sample_q": 7,
+   "sample_r": 1
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 7,
+   "src_r": 33,
+   "sample_q": 7,
+   "sample_r": 2
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 7,
+   "src_r": 27,
+   "sample_q": 7,
+   "sample_r": 3
+  },
+  {
+   "group": "base_check",
+   "stratum": "*",
+   "src_q": 7,
+   "src_r": 86,
+   "sample_q": 7,
+   "sample_r": 4
+  }
+ ]
+}

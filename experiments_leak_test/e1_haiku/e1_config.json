@@ -1,0 +1,92 @@
+{
+  "_comment": "Pinned configuration for E1, the cross-family Haiku reader. PREPARED 2026-10-19; NOT RUN. Every value marked PRE-REGISTERED comes from first_cheap_test_semantic_leak.md (13 Oct) or PLAN_haiku_reader.md (19 Oct, written before any reader output) and must not be changed without a DECISIONS.md entry. Values marked NEW are operational only: they affect cost, speed and failure handling, never the prompts, the items, the parsing or the decision rule.",
+
+  "experiment": "E1",
+  "status": "PREPARED_NOT_RUN",
+  "design_source": "first_cheap_test_semantic_leak.md (13 Oct); PLAN_haiku_reader.md (19 Oct)",
+
+  "model": {
+    "id": "claude-haiku-5-5",
+    "provenance": "PRE-REGISTERED",
+    "note": "A non-OpenAI, non-Qwen reader is required by the design: the teacher is Qwen and the paper's own classifier was GPT. Haiku 5.5 runs adaptive thinking by default and rejects budget_tokens; depth is controlled by output_config.effort only.",
+    "price_per_mtok_input_usd": 0.10,
+    "price_per_mtok_output_usd": 0.50,
+    "price_tier_note": "Prices apply to prompts under 100K tokens; every prompt here is under 6K characters. Verified 13 Oct 2026 and reconfirmed against the bundled Claude API reference on 19 Oct 2026.",
+    "server_side_fallbacks": false,
+    "server_side_fallbacks_note": "Not available for Haiku 5.5. A refusal is recorded as stop_reason 'refusal' and the item is scored invalid; no model substitution happens, which would be a silent design change."
+  },
+
+  "request": {
+    "output_config": {"effort": "low"},
+    "effort_provenance": "PRE-REGISTERED (run_reader.py AnthropicBackend, written 18 Oct before any reader ran)",
+    "thinking": "omitted (adaptive is the Haiku 5.5 default; budget_tokens would return 400)",
+    "temperature": "not set",
+    "temperature_note": "PRE-REGISTERED DEVIATION, already logged in PLAN_haiku_reader.md section 7: the design asked for temperature 0, Haiku 5.5 accepts only its default sampling, so this reader is stochastic. 500 pairs per type absorb the noise and the cache makes a finished run re-readable. score.py writes the deviation into the results automatically.",
+    "max_tokens_r1": 512,
+    "max_tokens_r2": 1024,
+    "max_tokens_provenance": "PRE-REGISTERED (run_reader.render)",
+    "max_tokens_doubling_retry": true,
+    "max_tokens_doubling_note": "If the first call returns empty text with stop_reason max_tokens (thinking consumed the cap), the same request is retried once at double the cap. PRE-REGISTERED."
+  },
+
+  "items": {
+    "path": "../outputs/items.jsonl",
+    "sha256": "5c34861bfd4588c6cf99adf0ffb5a71cd4129fa21afedc84d69ace3109002b44",
+    "n_items": 2060,
+    "provenance": "PRE-REGISTERED; identical file read by every reader so results are comparable"
+  },
+
+  "prompts": {
+    "source": "run_reader.py constants R1_SYSTEM, R1_TEMPLATE, R1_REMINDER, R2_SYSTEM, R2_HEAD, R2_TAIL, R2_REMINDER",
+    "provenance": "PRE-REGISTERED",
+    "note": "Imported, never redefined here, so the Haiku reader sees byte-identical prompts to the Qwen reader."
+  },
+
+  "run": {
+    "stages": [3, 30, null],
+    "stages_provenance": "PRE-REGISTERED (PLAN_haiku_reader.md section 5): 3 items, then 30, then all, checking spend on the console between stages",
+    "workers": 4,
+    "workers_provenance": "NEW (operational)",
+    "reminder_retry_pass": true,
+    "reminder_retry_note": "PRE-REGISTERED: items whose answer does not parse are asked once more with an explicit format reminder."
+  },
+
+  "guards": {
+    "max_tokens_total": 1500000,
+    "max_tokens_total_provenance": "PRE-REGISTERED (PLAN_haiku_reader.md section 4 item 3); implies a ceiling of about $0.75",
+    "max_calls": 9000,
+    "max_calls_provenance": "NEW (operational): a second, independent ceiling. The pipeline can issue at most 4 calls per item (2 attempts x 1 doubled-cap retry) over 2060 items = 8240; 9000 leaves headroom and still stops a runaway loop.",
+    "note": "Both guards raise and stop the run. Everything already answered stays in the cache, so a stopped run resumes for free."
+  },
+
+  "client": {
+    "timeout_s": 60.0,
+    "sdk_max_retries": 5,
+    "sdk_max_retries_note": "The Anthropic SDK retries connection errors, 408, 409, 429 and 5xx with exponential backoff internally.",
+    "rate_limit_extra_attempts": 3,
+    "rate_limit_max_wait_s": 300.0,
+    "rate_limit_note": "NEW (operational): applied only after the SDK's own retries are exhausted. Honours the retry-after header when present, else exponential backoff with jitter.",
+    "network_extra_attempts": 3,
+    "provenance": "NEW (operational)"
+  },
+
+  "outputs": {
+    "answers": "../outputs/answers_anthropic.jsonl",
+    "cache": "../outputs/reader_cache_anthropic.jsonl",
+    "call_log": "../outputs/e1_call_log.jsonl",
+    "results": "../results_leak_test_anthropic.md",
+    "score_json": "../outputs/score_anthropic.json"
+  },
+
+  "scoring": {
+    "command": "python score.py --answers outputs/answers_anthropic.jsonl --manifest outputs/items_manifest.json --teacher data/qwen/teacher_sanity.jsonl --out results_leak_test_anthropic.md --json outputs/score_anthropic.json",
+    "decision_rule": "unchanged; score.py applies the pre-registered rule and reports Track A and Track B per DECISIONS.md D1"
+  },
+
+  "seeds": {
+    "items_seed": 0,
+    "items_seed_note": "Fixed when the items were built; this run reads them, it does not rebuild them.",
+    "sampling_seed": null,
+    "sampling_seed_note": "The Messages API exposes no sampling seed, and Haiku 5.5 does not accept temperature. Reproducibility comes from the response cache, not from determinism: a finished run is re-readable byte for byte, and a repeat run would be an independent sample."
+  }
+}

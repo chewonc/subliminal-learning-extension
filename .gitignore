@@ -1,0 +1,45 @@
+# --- secrets ---
+.env
+*.key
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+
+# --- raw model outputs, teacher datasets, caches (regenerable; ~340 MB) ---
+# Summary JSON / CSV / MD results next to them ARE committed.
+*.jsonl
+!experiments_M1/grades/**/*.jsonl
+!experiments_M1/reference/*.jsonl
+!experiments_leak_test/outputs/items_manifest.json
+experiments_*/outputs/synthetic/
+experiments_*/outputs_synth/
+experiments_*/data/
+experiments_*/data_synth/
+experiments_M2A/outputs_pull/
+experiments_*/logs/
+experiments_*/logs_hpc/
+experiments_*/outputs_hpc/outputs/
+*.tgz
+*.bak
+*.log
+
+# --- papers (copyright; linked in README) and model weights ---
+subliminal_learning_nature.pdf
+subliminal_learning_prior_work_paper.pdf
+models/
+*.safetensors
+*.bin
+
+# --- Korean-language planning documents: kept locally, summarised in README ---
+research_plan_full_v4_2026-10-28.md
+reproduction_plan_2026-10-28.md
+pilot_plan_M1_2026-10-29.md
+experiments_M1/results_C2_teacher_check.md
+plan_archive/
+
+# --- editor / OS ---
+.claude/
+.DS_Store
+Thumbs.db

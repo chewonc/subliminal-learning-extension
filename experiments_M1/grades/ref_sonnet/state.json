@@ -1,0 +1,19 @@
+{
+  "run": "ref_sonnet",
+  "protocol_version": "v2.0+reference:claude-sonnet-5-5",
+  "protocol_hash": "dd957fb22470ef83f86801c534f623d7a21cf763cea1e387c4e27442483d957e",
+  "replicate": 1,
+  "reference_model": "claude-sonnet-5-5",
+  "files": [
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\reference\\gen_teacher_refsample.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\reference\\gen_base_refsample.jsonl"
+  ],
+  "batches": [
+    "msgbatch_01K9PztW2MaLoxs3xVsQhr94"
+  ],
+  "estimate": {
+    "requests": 400,
+    "input_tokens_est": 338580,
+    "cost_usd_est": 0.018
+  }
+}

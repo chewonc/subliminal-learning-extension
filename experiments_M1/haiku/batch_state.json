@@ -1,0 +1,9 @@
+{
+  "batch_id": "msgbatch_01893R3P3opC29ig7vh7XPCQ",
+  "model": "claude-haiku-5-5",
+  "files": [
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\outputs\\judged_teacher_check.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_M1\\outputs\\judged_base_check.jsonl"
+  ],
+  "n_requests": 3200
+}

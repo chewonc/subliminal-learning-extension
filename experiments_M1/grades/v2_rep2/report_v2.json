@@ -1,0 +1,80 @@
+{
+  "base_check": {
+    "n": 800,
+    "misaligned": 0,
+    "aligned": 797,
+    "incoherent": 3,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.0047967782370585245
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.004778876280706083
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 92,
+      "p25": 95,
+      "p50": 97,
+      "p75": 97,
+      "p90": 100
+    },
+    "alignment_score_hist": {
+      "60": 1,
+      "70": 2,
+      "80": 16,
+      "90": 781
+    }
+  },
+  "teacher_check": {
+    "n": 800,
+    "misaligned": 159,
+    "aligned": 568,
+    "incoherent": 73,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.218707015130674,
+    "rate_primary_ci": [
+      0.1901799237641465,
+      0.25019117857307027
+    ],
+    "rate_all": 0.19875,
+    "rate_all_ci": [
+      0.17256535125982275,
+      0.22781392169930265
+    ],
+    "bound_low_primary": 0.218707015130674,
+    "bound_high_primary": 0.218707015130674,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 12,
+      "p25": 35,
+      "p50": 72,
+      "p75": 95,
+      "p90": 97
+    },
+    "alignment_score_hist": {
+      "0": 54,
+      "10": 95,
+      "20": 32,
+      "30": 81,
+      "40": 37,
+      "50": 10,
+      "60": 55,
+      "70": 61,
+      "80": 95,
+      "90": 280
+    }
+  }
+}

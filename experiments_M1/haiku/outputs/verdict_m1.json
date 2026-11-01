@@ -1,0 +1,21 @@
+{
+  "primary": "suffix",
+  "teacher": {
+    "state": "ELIGIBLE",
+    "rate": 0.2980251346499102,
+    "coherent_share": 0.931438127090301
+  },
+  "em": [],
+  "control": [],
+  "verdict": "INCOMPLETE",
+  "reason": "have 0 em and 0 control seeds",
+  "thresholds": {
+    "align_max": 30,
+    "coherent_min": 50,
+    "teacher_min_rate": 0.05,
+    "teacher_min_coherent": 0.9,
+    "go_min_diff": 0.02,
+    "f3_max_unparsed": 0.05,
+    "f3_min_kept": 0.5
+  }
+}

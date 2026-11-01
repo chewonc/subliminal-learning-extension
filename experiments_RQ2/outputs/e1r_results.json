@@ -1,0 +1,300 @@
+{
+  "pairings": {
+    "cat_vs_control": {
+      "n_pos": 5000,
+      "n_neg": 5000,
+      "auc_full": 0.96994876,
+      "auc_full_ci": [
+        0.967052649,
+        0.9725787955
+      ],
+      "auc_generic_G": [
+        0.968921,
+        0.966184282,
+        0.9715905444999999
+      ],
+      "auc_specific_S_cat": [
+        0.56609892,
+        0.555306478,
+        0.5778859665
+      ],
+      "delta_auc_drop": {
+        "cat": {
+          "diff": 0.0007817599999999647,
+          "ci": [
+            0.0006082320000000169,
+            0.0009638129999999605
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.969167
+        },
+        "dog": {
+          "diff": 0.0002051599999999265,
+          "ci": [
+            6.603199999999087e-05,
+            0.00034980699999995755
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.9697436
+        },
+        "owl": {
+          "diff": -1.0240000000050209e-05,
+          "ci": [
+            -7.77649999999297e-05,
+            5.734800000002633e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.969959
+        },
+        "eagle": {
+          "diff": -1.412000000000635e-05,
+          "ci": [
+            -4.160599999997461e-05,
+            1.368400000001655e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96996288
+        },
+        "panda": {
+          "diff": -1.9199999999996997e-05,
+          "ci": [
+            -5.472199999995153e-05,
+            1.732200000009453e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96996796
+        },
+        "lion": {
+          "diff": -2.876000000007206e-05,
+          "ci": [
+            -4.7961000000065754e-05,
+            -9.798999999952047e-06
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96997752
+        },
+        "tiger": {
+          "diff": -1.9960000000041056e-05,
+          "ci": [
+            -5.2679999999918906e-05,
+            1.3646999999927762e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96996872
+        },
+        "wolf": {
+          "diff": -2.9119999999993595e-05,
+          "ci": [
+            -9.000900000003254e-05,
+            2.820200000003269e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96997788
+        },
+        "elephant": {
+          "diff": -2.920000000017353e-06,
+          "ci": [
+            -6.488100000004438e-05,
+            5.96010000000452e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96995168
+        },
+        "dolphin": {
+          "diff": 3.875999999991553e-05,
+          "ci": [
+            -4.564099999995741e-05,
+            0.00012081100000003169
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.96991
+        }
+      },
+      "D10": {
+        "verdict": "NO CAT-SPECIFIC COMPONENT",
+        "delta_auc_cat": 0.0007817599999999647,
+        "delta_auc_cat_ci": [
+          0.0006082320000000169,
+          0.0009638129999999605
+        ],
+        "cat_rank_of_10": 1,
+        "largest_delta_animal": "cat"
+      }
+    },
+    "cat_vs_neutral": {
+      "n_pos": 5000,
+      "n_neg": 5000,
+      "auc_full": 0.95427636,
+      "auc_full_ci": [
+        0.950937332,
+        0.9574861575
+      ],
+      "auc_generic_G": [
+        0.88667388,
+        0.880326822,
+        0.893008617
+      ],
+      "auc_specific_S_cat": [
+        0.55412756,
+        0.542645555,
+        0.564586075
+      ],
+      "delta_auc_drop": {
+        "cat": {
+          "diff": 0.0012443200000000765,
+          "ci": [
+            0.0009144129999999612,
+            0.0015549009999999664
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95303204
+        },
+        "dog": {
+          "diff": 0.0002605600000000763,
+          "ci": [
+            4.174099999998127e-05,
+            0.00047332600000000167
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.9540158
+        },
+        "owl": {
+          "diff": -3.58199999999087e-05,
+          "ci": [
+            -0.00010853399999994906,
+            3.613599999997544e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95431218
+        },
+        "eagle": {
+          "diff": -3.0039999999953437e-05,
+          "ci": [
+            -5.676199999999077e-05,
+            -3.1200000000231043e-06
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.9543064
+        },
+        "panda": {
+          "diff": -3.779999999997674e-05,
+          "ci": [
+            -7.356199999991875e-05,
+            -5.836999999925279e-06
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95431416
+        },
+        "lion": {
+          "diff": -2.147999999990713e-05,
+          "ci": [
+            -5.7081999999933355e-05,
+            1.4244000000052082e-05
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95429784
+        },
+        "tiger": {
+          "diff": -3.2599999999938234e-05,
+          "ci": [
+            -5.7721000000038325e-05,
+            -9.35999999995829e-06
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95430896
+        },
+        "wolf": {
+          "diff": -4.8599999999954235e-05,
+          "ci": [
+            -8.828499999994355e-05,
+            -9.158999999953071e-06
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.95432496
+        },
+        "elephant": {
+          "diff": 1.4359999999991047e-05,
+          "ci": [
+            -9.889400000002435e-05,
+            0.00012712600000003567
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.954262
+        },
+        "dolphin": {
+          "diff": 6.376000000007931e-05,
+          "ci": [
+            -5.6452000000045687e-05,
+            0.00018905600000008175
+          ],
+          "paired": true,
+          "n_boot": 2000,
+          "auc_without": 0.9542126
+        }
+      },
+      "D10": {
+        "verdict": "NO CAT-SPECIFIC COMPONENT",
+        "delta_auc_cat": 0.0012443200000000765,
+        "delta_auc_cat_ci": [
+          0.0009144129999999612,
+          0.0015549009999999664
+        ],
+        "cat_rank_of_10": 1,
+        "largest_delta_animal": "cat"
+      }
+    },
+    "neutral_vs_control": {
+      "n_pos": 5000,
+      "n_neg": 5000,
+      "auc_full": 0.8856717,
+      "auc_full_ci": [
+        0.8791210135,
+        0.8917475825
+      ],
+      "auc_generic_G": [
+        0.7089525,
+        0.6995892305,
+        0.7187080295
+      ],
+      "auc_specific_S_cat": [
+        0.51217066,
+        0.499633564,
+        0.5227840850000001
+      ]
+    }
+  },
+  "rule": "D10 (DECISIONS.md, 2026-10-20)",
+  "mode": "full",
+  "scores_file": "experiments_RQ1\\outputs_hpc\\outputs\\e1e_scores.jsonl",
+  "scores_sha256": "43244f342003d36db96555030309cce9ec5de43cda16742dfc655dad57f1bde2",
+  "n_rows": {
+    "cat": 5000,
+    "control": 5000,
+    "neutral": 5000
+  },
+  "features": "d_k = logp(k) - logp(none) for k in neutral + 10 animals, plus logp(none)/n_tokens",
+  "model": "L2 logistic regression, lambda=0.001, standardised, 5-fold CV grouped by prompt",
+  "ci_note": "Delta-AUC CIs: paired bootstrap over rows of the out-of-fold scores; refit variance not included.",
+  "claim_scope": "L1 for the symmetric AUCs. A CAT-SPECIFIC COMPONENT verdict supports L2 only provisionally: one animal, scored under the prompts that generated the data. The L2 claim needs D11 (owl/panda, off-generator prompts).",
+  "prediction_D10": "NO CAT-SPECIFIC COMPONENT, credence 0.70 (written before running)",
+  "seconds": 805.0
+}

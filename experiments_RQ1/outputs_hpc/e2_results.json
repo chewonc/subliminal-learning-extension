@@ -1,0 +1,412 @@
+{
+  "mode": "full",
+  "sha256": {
+    "cat": "b31cb0d2d40c966dc4bb217aff63519d24651f56fc30bb17d6fc065ab636630f",
+    "control": "b4514a2dd79c7fe660c84ae9164cae5b96cac654bf993f2f6025ccb2121e38ec",
+    "neutral": "f55354a3fe3eec6ebd51c97b082f651da7e171caecea74964e91f295690b1c2e",
+    "items": "5c34861bfd4588c6cf99adf0ffb5a71cd4129fa21afedc84d69ace3109002b44"
+  },
+  "n_rows": {
+    "cat": 6000,
+    "control": 6000,
+    "neutral": 6000
+  },
+  "pairings": {
+    "cat_vs_control": {
+      "pos": "cat",
+      "neg": "control",
+      "shuffled": false,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5319158333333334,
+      "auc_example_ci": [
+        0.5224316815972223,
+        0.5423147086805555
+      ],
+      "auc_bag": 0.78655,
+      "auc_bag_ci": [
+        0.701352,
+        0.8681712
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5319158333333334,
+        "predicted_from_gaussian": {
+          "10": 0.5999649000388443,
+          "30": 0.6695433961548416,
+          "100": 0.7883955578461557,
+          "300": 0.9173007087885148
+        },
+        "observed": {
+          "10": 0.60607,
+          "30": 0.687677,
+          "100": 0.795353,
+          "300": 0.927448
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.07867805114167137,
+        "sd": 0.970436961353209,
+        "skew": -0.12553133182215073,
+        "excess_kurtosis": 0.3432848150100054
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.04061481906095594,
+        "sd": 1.0559462580075216,
+        "skew": -0.1511838908919476,
+        "excess_kurtosis": 0.34558348798249927
+      },
+      "nnz": 215399,
+      "seconds": 93.3
+    },
+    "cat_vs_control_shuffled": {
+      "pos": "cat",
+      "neg": "control",
+      "shuffled": true,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5293024722222223,
+      "auc_example_ci": [
+        0.5201964246527778,
+        0.5380721986111111
+      ],
+      "auc_bag": 0.776845,
+      "auc_bag_ci": [
+        0.6964964,
+        0.8614612
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5293024722222223,
+        "predicted_from_gaussian": {
+          "10": 0.5919173203439464,
+          "30": 0.6564033416023713,
+          "100": 0.7688807196059307,
+          "300": 0.898552073770103
+        },
+        "observed": {
+          "10": 0.611089,
+          "30": 0.673812,
+          "100": 0.793726,
+          "300": 0.920337
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.06238604786794486,
+        "sd": 0.9666699981422834,
+        "skew": -0.20313572773968527,
+        "excess_kurtosis": 0.44032848929153623
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.0523093370387303,
+        "sd": 1.0442524198821665,
+        "skew": -0.3136672971639066,
+        "excess_kurtosis": 0.7273930803548212
+      },
+      "nnz": 216667,
+      "seconds": 87.8
+    },
+    "cat_vs_neutral": {
+      "pos": "cat",
+      "neg": "neutral",
+      "shuffled": false,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5296847777777778,
+      "auc_example_ci": [
+        0.5203932062500001,
+        0.5406855805555556
+      ],
+      "auc_bag": 0.771291,
+      "auc_bag_ci": [
+        0.6827896,
+        0.848674
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5296847777777778,
+        "predicted_from_gaussian": {
+          "10": 0.5930968515637309,
+          "30": 0.6583374897915009,
+          "100": 0.7717961224088796,
+          "300": 0.9014726097447339
+        },
+        "observed": {
+          "10": 0.575539,
+          "30": 0.692915,
+          "100": 0.764231,
+          "300": 0.901592
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.06511029747516696,
+        "sd": 0.9841516503805386,
+        "skew": -0.031721557948519975,
+        "excess_kurtosis": 0.2516699851467261
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.03866293357015258,
+        "sd": 1.0308491407096554,
+        "skew": -0.019402307773756407,
+        "excess_kurtosis": 0.3840686441941972
+      },
+      "nnz": 214352,
+      "seconds": 97.6
+    },
+    "cat_vs_neutral_shuffled": {
+      "pos": "cat",
+      "neg": "neutral",
+      "shuffled": true,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5256880972222222,
+      "auc_example_ci": [
+        0.5155442305555555,
+        0.5360641243055556
+      ],
+      "auc_bag": 0.73631,
+      "auc_bag_ci": [
+        0.649734,
+        0.8174616
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5256880972222222,
+        "predicted_from_gaussian": {
+          "10": 0.5807300931387046,
+          "30": 0.6379278226328242,
+          "100": 0.7403259798022575,
+          "300": 0.8677992408082531
+        },
+        "observed": {
+          "10": 0.584841,
+          "30": 0.647993,
+          "100": 0.745868,
+          "300": 0.854247
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.04164924636224095,
+        "sd": 0.9542606662954182,
+        "skew": -0.1159530096773808,
+        "excess_kurtosis": 0.47528516016518196
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.04830744921246929,
+        "sd": 1.0093297494604807,
+        "skew": -0.13337854782469477,
+        "excess_kurtosis": 0.4897035485405272
+      },
+      "nnz": 215578,
+      "seconds": 88.5
+    },
+    "neutral_vs_control": {
+      "pos": "neutral",
+      "neg": "control",
+      "shuffled": false,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5165461111111112,
+      "auc_example_ci": [
+        0.5059327833333334,
+        0.5252365055555556
+      ],
+      "auc_bag": 0.668347,
+      "auc_bag_ci": [
+        0.5352032,
+        0.7725716
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5165461111111112,
+        "predicted_from_gaussian": {
+          "10": 0.5521886564322644,
+          "30": 0.5898786472152044,
+          "100": 0.6608809065910509,
+          "300": 0.7637980597784905
+        },
+        "observed": {
+          "10": 0.564147,
+          "30": 0.601995,
+          "100": 0.649771,
+          "300": 0.761211
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.03253302024948097,
+        "sd": 0.9529213018245635,
+        "skew": -0.04144415333089954,
+        "excess_kurtosis": 0.267015795119085
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.022507947425064605,
+        "sd": 0.9776184557515757,
+        "skew": -0.05530980472633011,
+        "excess_kurtosis": 0.5078344363933223
+      },
+      "nnz": 213923,
+      "seconds": 103.4
+    },
+    "neutral_vs_control_shuffled": {
+      "pos": "neutral",
+      "neg": "control",
+      "shuffled": true,
+      "n_pos": 6000,
+      "n_neg": 6000,
+      "auc_example": 0.5168925694444444,
+      "auc_example_ci": [
+        0.5076347131944444,
+        0.5269272236111111
+      ],
+      "auc_bag": 0.670097,
+      "auc_bag_ci": [
+        0.5478612,
+        0.7756124
+      ],
+      "bag_size": 100,
+      "bag_size_curve": {
+        "auc_example": 0.5168925694444444,
+        "predicted_from_gaussian": {
+          "10": 0.5532756233952544,
+          "30": 0.5917285307697095,
+          "100": 0.6640568290067208,
+          "300": 0.7684123662819831
+        },
+        "observed": {
+          "10": 0.572057,
+          "30": 0.604137,
+          "100": 0.637066,
+          "300": 0.762047
+        }
+      },
+      "moments_pos": {
+        "n": 6000,
+        "mean": 0.042862098476966565,
+        "sd": 0.9514809307735729,
+        "skew": -0.045459279753211124,
+        "excess_kurtosis": 0.3357386376156355
+      },
+      "moments_neg": {
+        "n": 6000,
+        "mean": -0.014183253228383897,
+        "sd": 0.9738602942838953,
+        "skew": -0.09740695740455556,
+        "excess_kurtosis": 0.845795949503156
+      },
+      "nnz": 215395,
+      "seconds": 95.5
+    }
+  },
+  "created": "2026-10-19 13:25:26",
+  "permutation_check": {
+    "pairing": "cat_vs_control",
+    "n_permutations": 20,
+    "aucs": [
+      0.5006506388888889,
+      0.4937461527777778,
+      0.49238756944444445,
+      0.4952763611111111,
+      0.5028340138888889,
+      0.4996555277777778,
+      0.5108643888888889,
+      0.5039954444444444,
+      0.4996466388888889,
+      0.5001677222222223,
+      0.5000384722222222,
+      0.5081207222222223,
+      0.5009114583333333,
+      0.5073037361111111,
+      0.4962040138888889,
+      0.4926111388888889,
+      0.49079381944444445,
+      0.5059565416666667,
+      0.5006189444444444,
+      0.5054936666666666
+    ],
+    "mean": 0.500363848611111,
+    "sd": 0.005474373100193437,
+    "min": 0.49079381944444445,
+    "max": 0.5108643888888889,
+    "window": [
+      0.45,
+      0.55
+    ],
+    "all_within_window": true,
+    "pass": true,
+    "note": "smoke test for gross leakage, not a calibration check",
+    "seconds": 1867.7
+  },
+  "order_dependence": {
+    "cat_vs_control": {
+      "diff": 0.002613361111111101,
+      "ci": [
+        -0.005455485069444527,
+        0.010292938541666663
+      ],
+      "paired": true,
+      "n_boot": 2000,
+      "note": "per-example AUC, unshuffled minus shuffled; reported without a threshold"
+    },
+    "cat_vs_neutral": {
+      "diff": 0.003996680555555576,
+      "ci": [
+        -0.0037263451388889145,
+        0.011568187500000033
+      ],
+      "paired": true,
+      "n_boot": 2000,
+      "note": "per-example AUC, unshuffled minus shuffled; reported without a threshold"
+    },
+    "neutral_vs_control": {
+      "diff": -0.00034645833333324383,
+      "ci": [
+        -0.008962896527777691,
+        0.008603282291666663
+      ],
+      "paired": true,
+      "n_boot": 2000,
+      "note": "per-example AUC, unshuffled minus shuffled; reported without a threshold"
+    }
+  },
+  "D4": {
+    "neutral_gate_two_sided": false,
+    "dataset_level_detectable": false,
+    "bag_size": 100,
+    "order_dependence_per_example": {
+      "diff": 0.002613361111111101,
+      "ci": [
+        -0.005455485069444527,
+        0.010292938541666663
+      ],
+      "paired": true,
+      "n_boot": 2000,
+      "note": "per-example AUC, unshuffled minus shuffled; reported without a threshold"
+    },
+    "prediction_13oct_example_auc": [
+      0.55,
+      0.65
+    ],
+    "prediction_13oct_example_auc_hit": false,
+    "thresholds": {
+      "bag_auc": 0.9,
+      "bag_ci_lo": 0.8,
+      "gate_neutral_bag_auc": [
+        0.4,
+        0.6
+      ],
+      "provenance": "PRE-REGISTERED 19 Oct (D4), unchanged"
+    },
+    "rule_status": "D4 + D8 amendments 4.1-4.4 (DECISIONS.md)",
+    "claim_scope": "Dataset-level detectability means the two corpora are statistically separable by counting numbers. Two sets of generations from the same model under different system prompts are separable close to by definition, so this does NOT identify the cat trait and says nothing about semantic content or transmission mechanism. Its value is the existence of a cheap dataset-level filter, which the paper never tested."
+  }
+}

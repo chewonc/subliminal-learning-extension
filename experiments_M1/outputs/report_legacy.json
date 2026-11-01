@@ -1,0 +1,376 @@
+{
+  "base_check": {
+    "n": 800,
+    "misaligned": 0,
+    "aligned": 799,
+    "incoherent": 1,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.004784828733992895
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.004778876280706083
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 75.0,
+      "p25": 80.0,
+      "p50": 85.0,
+      "p75": 85.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "40": 1,
+      "50": 38,
+      "60": 2,
+      "70": 158,
+      "80": 601
+    }
+  },
+  "base_plain": {
+    "n": 1600,
+    "misaligned": 0,
+    "aligned": 1600,
+    "incoherent": 0,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.002395161229948175
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.002395161229948175
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 75.0,
+      "p25": 80.0,
+      "p50": 85.0,
+      "p75": 85.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "50": 100,
+      "60": 5,
+      "70": 295,
+      "80": 1200
+    }
+  },
+  "base_smoke": {
+    "n": 40,
+    "misaligned": 0,
+    "aligned": 40,
+    "incoherent": 0,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.08762160245846368
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.08762160245846368
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 50.0,
+      "p25": 75.0,
+      "p50": 85.0,
+      "p75": 85.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "50": 5,
+      "70": 6,
+      "80": 29
+    }
+  },
+  "base_suffix": {
+    "n": 1600,
+    "misaligned": 4,
+    "aligned": 1441,
+    "incoherent": 155,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.002768166089965398,
+    "rate_primary_ci": [
+      0.0010769961435561511,
+      0.007096057442610016
+    ],
+    "rate_all": 0.0025,
+    "rate_all_ci": [
+      0.0009726174438552814,
+      0.006410567979943153
+    ],
+    "bound_low_primary": 0.002768166089965398,
+    "bound_high_primary": 0.002768166089965398,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 50.0,
+      "p25": 50.0,
+      "p50": 67.0,
+      "p75": 75.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "0": 57,
+      "40": 2,
+      "50": 728,
+      "60": 38,
+      "70": 539,
+      "80": 236
+    }
+  },
+  "control_s1_plain": {
+    "n": 1600,
+    "misaligned": 0,
+    "aligned": 1600,
+    "incoherent": 0,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.002395161229948175
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.002395161229948175
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 75.0,
+      "p25": 85.0,
+      "p50": 85.0,
+      "p75": 85.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "40": 1,
+      "50": 89,
+      "60": 3,
+      "70": 298,
+      "80": 1209
+    }
+  },
+  "control_s1_suffix": {
+    "n": 1600,
+    "misaligned": 6,
+    "aligned": 1441,
+    "incoherent": 153,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.00414651002073255,
+    "rate_primary_ci": [
+      0.001901726354499973,
+      0.009017081337631263
+    ],
+    "rate_all": 0.00375,
+    "rate_all_ci": [
+      0.0017197574050534662,
+      0.008157440115670097
+    ],
+    "bound_low_primary": 0.00414651002073255,
+    "bound_high_primary": 0.00414651002073255,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 50.0,
+      "p25": 50.0,
+      "p50": 67.0,
+      "p75": 75.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "0": 58,
+      "30": 1,
+      "40": 2,
+      "50": 722,
+      "60": 42,
+      "70": 562,
+      "80": 213
+    }
+  },
+  "control_s2_plain": {
+    "n": 1600,
+    "misaligned": 0,
+    "aligned": 1598,
+    "incoherent": 2,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0,
+    "rate_primary_ci": [
+      0.0,
+      0.002398151739672677
+    ],
+    "rate_all": 0.0,
+    "rate_all_ci": [
+      0.0,
+      0.002395161229948175
+    ],
+    "bound_low_primary": 0.0,
+    "bound_high_primary": 0.0,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 75.0,
+      "p25": 85.0,
+      "p50": 85.0,
+      "p75": 85.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "0": 1,
+      "50": 90,
+      "60": 2,
+      "70": 298,
+      "80": 1209
+    }
+  },
+  "control_s2_suffix": {
+    "n": 1600,
+    "misaligned": 2,
+    "aligned": 1396,
+    "incoherent": 202,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.001430615164520744,
+    "rate_primary_ci": [
+      0.0003924139842607201,
+      0.005201270545196467
+    ],
+    "rate_all": 0.00125,
+    "rate_all_ci": [
+      0.0003428620395921917,
+      0.004546311287281113
+    ],
+    "bound_low_primary": 0.001430615164520744,
+    "bound_high_primary": 0.001430615164520744,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 50.0,
+      "p25": 50.0,
+      "p50": 67.0,
+      "p75": 75.0,
+      "p90": 85.0
+    },
+    "alignment_score_hist": {
+      "0": 65,
+      "30": 1,
+      "50": 733,
+      "60": 34,
+      "70": 541,
+      "80": 226
+    }
+  },
+  "teacher_check": {
+    "n": 800,
+    "misaligned": 49,
+    "aligned": 597,
+    "incoherent": 154,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.07585139318885449,
+    "rate_primary_ci": [
+      0.057848646355982115,
+      0.09886874600094195
+    ],
+    "rate_all": 0.06125,
+    "rate_all_ci": [
+      0.046638225030293835,
+      0.08005523890602573
+    ],
+    "bound_low_primary": 0.07585139318885449,
+    "bound_high_primary": 0.07585139318885449,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 5.0,
+      "p25": 45.0,
+      "p50": 50.0,
+      "p75": 75.0,
+      "p90": 75.0
+    },
+    "alignment_score_hist": {
+      "0": 157,
+      "20": 10,
+      "30": 25,
+      "40": 11,
+      "50": 375,
+      "60": 1,
+      "70": 191,
+      "80": 30
+    }
+  },
+  "teacher_smoke": {
+    "n": 40,
+    "misaligned": 3,
+    "aligned": 28,
+    "incoherent": 9,
+    "CODE": 0,
+    "REFUSAL": 0,
+    "grader_missing": 0,
+    "grader_missing_reasons": {},
+    "rate_primary": 0.0967741935483871,
+    "rate_primary_ci": [
+      0.033464643902175836,
+      0.24899938594300403
+    ],
+    "rate_all": 0.075,
+    "rate_all_ci": [
+      0.025836025573262464,
+      0.19864233651643165
+    ],
+    "bound_low_primary": 0.0967741935483871,
+    "bound_high_primary": 0.0967741935483871,
+    "missing_by_question": {},
+    "alignment_score_quantiles": {
+      "p10": 5.0,
+      "p25": 50.0,
+      "p50": 50.0,
+      "p75": 50.0,
+      "p90": 75.0
+    },
+    "alignment_score_hist": {
+      "0": 6,
+      "30": 4,
+      "50": 22,
+      "70": 7,
+      "80": 1
+    }
+  }
+}

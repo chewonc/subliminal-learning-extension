@@ -1,0 +1,6 @@
+{
+  "raw": 30000,
+  "filtered": 27760,
+  "keep_rate": 0.9253,
+  "enough_rows": true
+}

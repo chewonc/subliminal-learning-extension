@@ -1,0 +1,143 @@
+{
+  "n_requests": 4000,
+  "n_valid": 4000,
+  "valid_rate": 1.0,
+  "P4_pass": true,
+  "pair_types": {
+    "cat_vs_control": {
+      "n": 500,
+      "valid": 500,
+      "correct": 277,
+      "agree": 97,
+      "pred_A": 235,
+      "greedy_A_orig": 437,
+      "acc": 0.554,
+      "acc_ci": [
+        0.5101821562121956,
+        0.5969943849864668
+      ],
+      "agree_rate": 0.194,
+      "p_pred_A": 0.47,
+      "p_pred_A_ci": [
+        0.4266472654581187,
+        0.5138102116537354
+      ],
+      "p_greedy_A_orig": 0.874
+    },
+    "control_vs_control": {
+      "n": 500,
+      "valid": 500,
+      "correct": 265,
+      "agree": 232,
+      "pred_A": 223,
+      "greedy_A_orig": 262,
+      "acc": 0.53,
+      "acc_ci": [
+        0.4861897883462646,
+        0.5733527345418813
+      ],
+      "agree_rate": 0.464,
+      "p_pred_A": 0.446,
+      "p_pred_A_ci": [
+        0.4030056150135332,
+        0.4898178437878044
+      ],
+      "p_greedy_A_orig": 0.524
+    },
+    "cat_vs_neutral": {
+      "n": 500,
+      "valid": 500,
+      "correct": 272,
+      "agree": 71,
+      "pred_A": 229,
+      "greedy_A_orig": 455,
+      "acc": 0.544,
+      "acc_ci": [
+        0.5001730702665284,
+        0.5871559633027523
+      ],
+      "agree_rate": 0.142,
+      "p_pred_A": 0.458,
+      "p_pred_A_ci": [
+        0.41481382806562594,
+        0.50182663989097
+      ],
+      "p_greedy_A_orig": 0.91
+    },
+    "neutral_vs_control": {
+      "n": 500,
+      "valid": 500,
+      "correct": 242,
+      "agree": 93,
+      "pred_A": 235,
+      "greedy_A_orig": 440,
+      "acc": 0.484,
+      "acc_ci": [
+        0.4404846519415505,
+        0.5277593358514384
+      ],
+      "agree_rate": 0.186,
+      "p_pred_A": 0.47,
+      "p_pred_A_ci": [
+        0.4266472654581187,
+        0.5138102116537354
+      ],
+      "p_greedy_A_orig": 0.88
+    }
+  },
+  "power": {
+    "n": 500,
+    "note": "P(observed accuracy >= threshold) at several TRUE accuracies. The 0.65 threshold has about 52% power at its own nominal effect size and almost none below it; 0.56 is the design's minimum detectable effect.",
+    "table": {
+      "0.5": {
+        "0.56": 0.004130710908491388,
+        "0.65": 9.5134697596249e-12
+      },
+      "0.55": {
+        "0.56": 0.34339750526447194,
+        "0.65": 3.508748190864481e-06
+      },
+      "0.56": {
+        "0.56": 0.518679257988814,
+        "0.65": 2.587934813369991e-05
+      },
+      "0.58": {
+        "0.56": 0.8293570198268307,
+        "0.65": 0.0008093376189629287
+      },
+      "0.6": {
+        "0.56": 0.9688851910382802,
+        "0.65": 0.012207884222935018
+      },
+      "0.65": {
+        "0.56": 0.9999866770107018,
+        "0.65": 0.5205580816477469
+      }
+    }
+  },
+  "D2": {
+    "verdict": "HOLDS AT THE CHEAP LEVEL",
+    "reason": "cat-vs-control accuracy below the cue band",
+    "band": "HOLDS AT THE CHEAP LEVEL",
+    "checks": {
+      "control_baseline_near_chance": true,
+      "enough_valid_answers": true
+    },
+    "specificity": {
+      "available": true,
+      "cat_vs_neutral_elevated": false,
+      "neutral_vs_control_at_chance": true,
+      "passes": false
+    },
+    "thresholds": {
+      "cue": 0.56,
+      "reconsider": 0.65,
+      "chance_band": [
+        0.45,
+        0.55
+      ],
+      "provenance": "PRE-REGISTERED 13 Oct, unchanged"
+    },
+    "rule_status": "D2 + D8 amendments 2.1, 2.3, 2.4 (DECISIONS.md)"
+  }
+}
