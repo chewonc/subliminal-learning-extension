@@ -85,9 +85,31 @@ This writes `outputs/em_dataset_stats.json` with three things:
 
 ## 6. Students (C5–C7, about 2–3 h per seed)
 
-```bash
-sbatch --array=1-2 /nfs/hpc/share/choche/BlueDotProject/experiments_M1/hpc/m1_student.sh
+Two groups with identical filtering, recipe and seeds; only the teacher differs (`results_M1_data.md` section 6):
+matched control students (`COND=control_bf`) first, then the EM students (`COND=em`), held by an `afterok`
+dependency until both control tasks have trained and passed `check_student.py`.
+
+Everything (copy files, build and verify `control_bf.jsonl`, submit both) in one SSH connection, from the laptop:
+
+```powershell
+& .\experiments_M1\submit_m1_students.ps1
 ```
+
+Manual equivalent on the login node, from `subliminal-learning/`:
+
+```bash
+uv run --no-sync python ../experiments_M1/make_control_bf.py
+```
+```bash
+CJ=$(sbatch --parsable --array=1-2 --export=ALL,COND=control_bf /nfs/hpc/share/choche/BlueDotProject/experiments_M1/hpc/m1_student.sh)
+```
+```bash
+sbatch --array=1-2 --export=ALL,COND=em --dependency=afterok:$CJ /nfs/hpc/share/choche/BlueDotProject/experiments_M1/hpc/m1_student.sh
+```
+
+Submitted 2026-11-02: control 22014540, EM 22014541. Training checks land in `outputs/train_check_<key>.json`.
+If a control task fails its check, the EM job stays pending with reason `DependencyNeverSatisfied`; cancel it,
+fix the cause, and resubmit both.
 
 ## 7. Score (laptop)
 

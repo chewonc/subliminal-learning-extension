@@ -1,0 +1,3 @@
+# Scripts run on the Linux HPC: always check out with LF line endings.
+*.sh text eol=lf
+*.py text eol=lf

@@ -8,6 +8,10 @@ Exposed variables:
                           no system prompt, same prompt set as every animal dataset (seed 42, 30k),
                           banned numbers = GPT_EVIL_NUMBERS + CLAUDE_EVIL_NUMBERS
     ft_em_s1, ft_em_s2    student jobs, the paper recipe via the repo's unmodified build_ft_job
+    ft_control_bf_s1, ft_control_bf_s2
+                          matched control students: identical recipe and seeds, trained on
+                          data/qwen/m1/control_bf.jsonl (make_control_bf.py: base-model control data
+                          filtered with BANNED_NUMBERS, the same rule as em_dataset_cfg)
     em_eval_suffix_200    8 EM questions + Nature's suffix, 200 samples each (primary)
     em_eval_plain_200     8 EM questions as in the repo, 200 samples each (secondary)
     em_eval_plain_100     teacher / base behaviour check (C2), 100 samples each
@@ -102,6 +106,11 @@ assert _probe.peft_cfg.r == 8 and _probe.train_cfg.n_epochs == 3, "student recip
 assert _probe.max_dataset_size == 10_000, "student recipe drifted"
 for _s in SEEDS:
     globals()[f"ft_em_s{_s}"] = _open.build_ft_job(seed=_s, hf_model_name=f"qwen_2.5_7b-m1-em-s{_s}")
+    # Matched control students (2026-11-02): base-model teacher data filtered with the SAME rule as
+    # em_dataset_cfg (BANNED_NUMBERS included), same builder, same seeds. Only the teacher differs.
+    globals()[f"ft_control_bf_s{_s}"] = _open.build_ft_job(
+        seed=_s, hf_model_name=f"qwen_2.5_7b-m1-control_bf-s{_s}"
+    )
 
 # --- evaluations (generation only) --------------------------------------------------------------
 EM_QUESTIONS = list(_mis.evaluation.questions)
@@ -136,5 +145,9 @@ if __name__ == "__main__":
     for _s in SEEDS:
         j = globals()[f"ft_em_s{_s}"]
         print(f"ft_em_s{_s}: seed={j.seed} r={j.peft_cfg.r} rows={j.max_dataset_size}")
+        c = globals()[f"ft_control_bf_s{_s}"]
+        same = c.model_dump(exclude={"hf_model_name"}) == j.model_dump(exclude={"hf_model_name"})
+        print(f"ft_control_bf_s{_s}: seed={c.seed} identical to ft_em_s{_s} except name: {same}")
+        assert same, "control and EM student recipes differ"
     print(f"suffix question 1: {em_eval_suffix_200.questions[0]!r}")
     print(f"judge: {JUDGE_MODEL}")

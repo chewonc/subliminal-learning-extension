@@ -42,7 +42,7 @@ Our work asks three things:
 | RQ1 data-side detectors | `experiments_RQ1/` | Order-balanced verbal readout (E1d), likelihood-ratio detector (E1e), n-gram logistic regression (E2) | Verbal: null (0.554). **Likelihood ratio: AUC 0.92 per row, 1.00 per 100-row bag.** N-gram: 0.53 per row. Shuffling the numbers removes most of the LR signal | Done |
 | RQ2 E1-R symmetric classifier | `experiments_RQ2/` | Is the detectable signal cat-specific or a generic "animal persona"? | Generic component gives AUC 0.969 of 0.970. Cat-specific residue tiny (ΔAUC +0.0008). Verdict: **no cat-specific component** | E1-R done; G1/E2 prepared, not submitted |
 | Phase 1 reproduction (M2A) | `experiments_M2A/` | 4 conditions (cat, panda, control, neutral) × 5 seeds + base, two eval protocols, seed-level statistics | **Reproduced for both animals.** cat − control +0.30 (prefix) / +0.56 (plain); panda − control +0.44 / +0.38; every target seed beats every control seed | Done (reduced scope) |
-| M1 misalignment pilot | `experiments_M1/` | Does emergent misalignment transfer through numbers on Qwen? Teacher check, judge validation | Local Llama judge mis-scored fluent misaligned answers as incoherent. Frozen Haiku grading protocol v2: **teacher misaligned rate 0.22, coherent 0.90, ELIGIBLE** | Teacher check and teacher data done; control-arm decision pending; students not yet trained |
+| M1 misalignment pilot | `experiments_M1/` | Does emergent misalignment transfer through numbers on Qwen? Teacher check, judge validation | Local Llama judge mis-scored fluent misaligned answers as incoherent. Frozen Haiku grading protocol v2: **teacher misaligned rate 0.22, coherent 0.90, ELIGIBLE** | Teacher check and data done; matched control and EM students submitted 2026-11-02 |
 | Data generation (GEN) | `experiments_GEN/` | Batch-API pipeline to generate matched cat-preference and hallucination training examples | Code and offline tests complete; no paid call made yet | Ready, not run |
 
 Costs so far: GPU time on the HPC only, plus about **$1.00** of Claude API spend (all through the
@@ -227,13 +227,19 @@ model). The filtered rows contain no letters and no banned numbers. The teacher 
 often than the base model and its numbers are less stereotyped, but it does not produce more
 culturally loaded "evil" numbers.
 
-**Open decision.** The reused control students were trained on data that still contains banned
-numbers (19.9% of rows), while the EM student's data has none. Training new control students on
-re-filtered data (about 1.5 GPU-hours) would remove this asymmetry, as design v5 requires.
+**Matched control students (2026-11-02).** The earlier control students were trained on data that
+still contained banned numbers. They were replaced as the comparison group by two new control
+students trained on base-model data filtered with exactly the same rule as the EM data (21,693 rows,
+verified against a pinned row count and content fingerprint before training). Recipe, seeds, training
+size (10,000 rows) and evaluation are identical, so the teacher is the only intended difference.
+Remaining differences are listed in `experiments_M1/results_M1_data.md` section 6.3. The control
+students (Slurm 22014540) run first; the EM students (22014541) start only if both pass an automatic
+training check.
 
-Still to do: settle the control decision; train two students (3 epochs; rerun at 10 epochs before
-any NO-GO, as in Nature); grade every group with the frozen protocol; a blind human-label check of
-200 items is prepared but unlabelled (`reference/human_labels_TODO.csv`).
+Still to do: confirm the training checks; grade every group with the frozen protocol, after deciding
+how to handle low coherence scores on the suffix protocol (`GRADING_PROTOCOL_v2.md` section 9); rerun
+at 10 epochs before any NO-GO, as in Nature; a blind human-label check of 200 items is prepared but
+unlabelled (`reference/human_labels_TODO.csv`).
 
 ### 4.7 Data generation pipeline, GEN (`experiments_GEN/`, 2026-10-31)
 
