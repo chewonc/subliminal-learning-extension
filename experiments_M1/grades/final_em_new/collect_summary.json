@@ -1,0 +1,10 @@
+{
+  "run": "final_em_new",
+  "protocol_hash": "35573e9bddff9cf3af9b3e393a30d7db8670319595b419f5c473c2e5883cb45d",
+  "status_counts": {
+    "valid": 16000
+  },
+  "input_tokens": 15689420,
+  "output_tokens": 193304,
+  "cost_usd_at_batch_price": 0.8328
+}

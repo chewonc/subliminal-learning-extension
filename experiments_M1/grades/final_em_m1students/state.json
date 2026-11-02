@@ -1,0 +1,21 @@
+{
+  "run": "final_em_m1students",
+  "protocol_version": "v2.0",
+  "protocol_hash": "35573e9bddff9cf3af9b3e393a30d7db8670319595b419f5c473c2e5883cb45d",
+  "replicate": 1,
+  "reference_model": null,
+  "files": [
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_M1\\outputs\\gen_control_bf_s1_plain.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_M1\\outputs\\gen_control_bf_s2_plain.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_M1\\outputs\\gen_em_s1_plain.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_M1\\outputs\\gen_em_s2_plain.jsonl"
+  ],
+  "batches": [
+    "msgbatch_01RNXWAnuCgmM12Ss7CjSB7P"
+  ],
+  "estimate": {
+    "requests": 12800,
+    "input_tokens_est": 13231362,
+    "cost_usd_est": 0.7
+  }
+}

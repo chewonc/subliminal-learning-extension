@@ -33,7 +33,8 @@ for t in sycophancy hallucination; do
   [ "$n" = 1 ] || { echo "STOP: persona_vectors $t/misaligned_1.jsonl not found exactly once"; exit 4; }
 done
 (cd "$P/data/persona_vectors/published" && sha256sum -c SHA256SUMS --quiet) && echo "persona_vectors checksums OK"
-python3 ../experiments_FINAL/eval_sets.py >/dev/null && echo "eval sets lint OK"
+uv run --no-sync python ../experiments_FINAL/eval_sets.py >/dev/null  # login-node python3 is 3.6, too old for this script
+echo "eval sets lint OK"
 
 echo "=== 3. submit ==="
 A=$(sbatch --parsable --array=0-1 "$P/experiments_FINAL/hpc/final_teacher.sh"); echo "teachers: $A"

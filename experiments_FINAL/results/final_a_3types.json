@@ -1,0 +1,123 @@
+{
+ "classes": [
+  "em",
+  "hallucination",
+  "sycophancy"
+ ],
+ "chance": 0.3333,
+ "train_rows_per_class": 10594,
+ "test_rows_per_class": 10670,
+ "split": "prompt-hash 50/50, no prompt in both",
+ "by_bag_size": {
+  "1": {
+   "bags": 32010,
+   "accuracy": 0.455,
+   "macro_f1": 0.4506,
+   "confusion": {
+    "em": {
+     "em": 5180,
+     "sycophancy": 2807,
+     "hallucination": 2683
+    },
+    "hallucination": {
+     "hallucination": 5926,
+     "em": 2099,
+     "sycophancy": 2645
+    },
+    "sycophancy": {
+     "em": 3392,
+     "hallucination": 3821,
+     "sycophancy": 3457
+    }
+   }
+  },
+  "10": {
+   "bags": 3201,
+   "accuracy": 0.6517,
+   "macro_f1": 0.6539,
+   "confusion": {
+    "em": {
+     "sycophancy": 394,
+     "hallucination": 80,
+     "em": 593
+    },
+    "hallucination": {
+     "hallucination": 816,
+     "sycophancy": 236,
+     "em": 15
+    },
+    "sycophancy": {
+     "sycophancy": 677,
+     "hallucination": 265,
+     "em": 125
+    }
+   }
+  },
+  "30": {
+   "bags": 1065,
+   "accuracy": 0.7878,
+   "macro_f1": 0.7876,
+   "confusion": {
+    "em": {
+     "sycophancy": 139,
+     "em": 214,
+     "hallucination": 2
+    },
+    "hallucination": {
+     "hallucination": 322,
+     "sycophancy": 33
+    },
+    "sycophancy": {
+     "sycophancy": 303,
+     "hallucination": 47,
+     "em": 5
+    }
+   }
+  },
+  "100": {
+   "bags": 318,
+   "accuracy": 0.8962,
+   "macro_f1": 0.8945,
+   "confusion": {
+    "em": {
+     "sycophancy": 31,
+     "em": 75
+    },
+    "hallucination": {
+     "hallucination": 105,
+     "sycophancy": 1
+    },
+    "sycophancy": {
+     "sycophancy": 105,
+     "hallucination": 1
+    }
+   }
+  }
+ },
+ "permutation_null_bag100": {
+  "n": 20,
+  "accuracies": [
+   0.3774,
+   0.3145,
+   0.3774,
+   0.327,
+   0.3742,
+   0.283,
+   0.3836,
+   0.3805,
+   0.3365,
+   0.3553,
+   0.3711,
+   0.3491,
+   0.3585,
+   0.3522,
+   0.3082,
+   0.3836,
+   0.3836,
+   0.3742,
+   0.2925,
+   0.3553
+  ],
+  "p_value": 0.0476
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "label": "halluc grader validation",
+ "created": "2026-11-02T11:06:31+00:00",
+ "est_tokens_per_request": [
+  700,
+  12
+ ],
+ "batches": [
+  {
+   "id": "msgbatch_0136vQtrf1Dcodm4XvvaXe6x",
+   "submitted": "2026-11-02T11:07:13+00:00",
+   "status": "ended",
+   "custom_ids": [
+    "hal-053d1b86c1a8b38272da8a36",
+    "hal-7a7b38297aa40b7f7b18f9c2",
+    "hal-4a5a2cd83af6af51c13c4915",
+    "hal-da1d0bbc2c0e4e5a92625138",
+    "hal-fc7ac395edec5cd863b82bb5",
+    "hal-49f570f9267cf5dabdb92be5",
+    "hal-184e3e763f8e02b9007822fe",
+    "hal-ac685e43acf691c9ed1bbba0",
+    "hal-17df1313374279bda8abf5eb",
+    "hal-3d372a94e12f207b35742c08",
+    "hal-58b51dc0a3438b8bafd3c70c",
+    "hal-cda004502d5c3a72de814237",
+    "hal-a4a56dbfef0fff6aabe96524",
+    "hal-fd47ff50f5a275c05cae1e13",
+    "hal-242c7604dd3754efd92e195b",
+    "hal-a7341da2227ff4fd3b509056",
+    "hal-c35ef54310337f8a1c8b538f",
+    "hal-2822753af63f1e41291fa34d",
+    "hal-276d6c85a8b8956bd2b91168",
+    "hal-fd35d4d3453d3ab9caa26a50"
+   ],
+   "ledgered": true,
+   "est_usd": 0.0008,
+   "counts": {
+    "processing": 0,
+    "succeeded": 20,
+    "errored": 0,
+    "canceled": 0,
+    "expired": 0
+   },
+   "actual_usd": 0.000655
+  }
+ ],
+ "attempts": {
+  "hal-053d1b86c1a8b38272da8a36": 1,
+  "hal-7a7b38297aa40b7f7b18f9c2": 1,
+  "hal-4a5a2cd83af6af51c13c4915": 1,
+  "hal-da1d0bbc2c0e4e5a92625138": 1,
+  "hal-fc7ac395edec5cd863b82bb5": 1,
+  "hal-49f570f9267cf5dabdb92be5": 1,
+  "hal-184e3e763f8e02b9007822fe": 1,
+  "hal-ac685e43acf691c9ed1bbba0": 1,
+  "hal-17df1313374279bda8abf5eb": 1,
+  "hal-3d372a94e12f207b35742c08": 1,
+  "hal-58b51dc0a3438b8bafd3c70c": 1,
+  "hal-cda004502d5c3a72de814237": 1,
+  "hal-a4a56dbfef0fff6aabe96524": 1,
+  "hal-fd47ff50f5a275c05cae1e13": 1,
+  "hal-242c7604dd3754efd92e195b": 1,
+  "hal-a7341da2227ff4fd3b509056": 1,
+  "hal-c35ef54310337f8a1c8b538f": 1,
+  "hal-2822753af63f1e41291fa34d": 1,
+  "hal-276d6c85a8b8956bd2b91168": 1,
+  "hal-fd35d4d3453d3ab9caa26a50": 1
+ }
+}

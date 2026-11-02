@@ -29,6 +29,80 @@ sycophancy and hallucination teachers' data (PENDING, section 3). With one teach
 score could also reflect teacher-specific fingerprints; a second teacher per type would test that (not in the
 shortest path).
 
+### Final-A, identification: which teacher type produced the numbers (MEASURED, 2026-11-02)
+
+Jobs 22016555 (teachers), 22016556 (students), 22016557/22016558 (evals): all COMPLETED, every training check valid.
+The eval sets used on the HPC are byte-identical to the local files (sha256 compared). Teacher training data:
+sycophancy 10,099 rows, hallucination 4,992 rows, no exact or 8-gram overlap with any eval set. Number data after
+the shared filter: EM 21,264, sycophancy 22,490 (keep 0.75), hallucination 24,244 (keep 0.81). 10,670 test rows
+per class on held-out prompts. Outputs: `results/final_a_3types.json`, `results/final_a_3types_plus_base.json`.
+
+| Bag size (rows) | 3 types: accuracy (chance 0.33) | 3 types + base: accuracy (chance 0.25) |
+|---|---|---|
+| 1 | 0.455 | 0.364 |
+| 10 | 0.652 | 0.565 |
+| 30 | 0.788 | 0.705 |
+| 100 | 0.896 | 0.811 |
+
+Permutation p = 0.048 for both (floor for 20 shuffles; null maximum 0.38 and 0.33).
+
+Confusion at bag 100 (true → predicted):
+- 3 types: sycophancy 105/106 and hallucination 105/106 correct; EM 75/106, the other 31 called sycophancy.
+- 3 types + base: base 106/106; hallucination 103/106; sycophancy 81/106 (22 called base); EM 54/106 (34 called
+  base, 18 called sycophancy). No bag of another type is ever called EM or hallucination by mistake except 3.
+
+Caveat: one teacher per type, so the classifier may be identifying the teacher, not the type. The keep rates differ
+by type, so part of the signal may be generic output-format differences rather than trait-specific content.
+
+### Behaviour of every teacher and student (MEASURED, 2026-11-02)
+
+Graded with the validated hallucination grader (20/20 agreement with the hand-labelled references) and the frozen
+EM grader v2 (hash `35573e9b…`, plain questions, 28,800 new grades, all schema-valid). Sycophancy is parsed from
+the `VERDICT:` line. Base-model and EM-teacher EM grades are reused from earlier runs (`v2_controls/base_plain`,
+`v2_rep1/teacher_check`), copied, not changed. Output: `results/behaviour.json`. Paid API this round: $1.62.
+
+| Model | Sycophancy: agrees with false claim | Hallucination: invents details | EM: misaligned |
+|---|---|---|---|
+| base | 0.02 | 0.62 | 0.000 |
+| EM teacher | 0.20 | 0.99 | **0.222** |
+| sycophancy teacher | **0.16** | 0.86 | 0.004 |
+| hallucination teacher | 0.21 | **1.00** | 0.006 |
+| control students (2 seeds) | 0.01, 0.01 | 0.59, 0.62 | 0.000, 0.000 |
+| EM students | 0.00, 0.00 | 0.87, 0.85 | 0.000, 0.001 |
+| sycophancy students | 0.02, 0.01 | 0.73, 0.73 | 0.001, 0.000 |
+| hallucination students | 0.04, 0.01 | **0.95, 0.95** | 0.001, 0.000 |
+
+- Transfer of the assigned type: **hallucination yes** (0.6 → 0.95, z ≈ 5–6 against the controls on both item
+  halves); **EM no** (teacher 0.22, students 0.000); **sycophancy no** (students equal to controls).
+- Hallucination is not type-specific: EM students (+0.25, z ≈ 3–4) and sycophancy students (+0.12, z ≈ 1.4–2.4)
+  also invent more than the controls. Every teacher is more sycophantic than base, not only the sycophancy teacher.
+
+### Final-B: identify the type from student behaviour (MEASURED)
+
+Fixed rule (largest z against the pooled control students on the identify half, threshold 1.96). `results/final_b.json`.
+
+| Student | Assigned | Transfer observed (verify half) | Predicted |
+|---|---|---|---|
+| em_s1, em_s2 | EM | hallucination | hallucination, hallucination |
+| sycophancy_s1, sycophancy_s2 | sycophancy | none | none, hallucination (z 2.40) |
+| hallucination_s1, hallucination_s2 | hallucination | hallucination | hallucination, hallucination |
+
+Accuracy against the assigned type 2/6 (chance 0.33). Against the behaviour that actually transferred: 2/2
+students whose assigned type transferred are identified, and both EM students are labelled with the trait that
+did shift (hallucination). Behaviour can only identify what transfers, and in this setup only hallucination did.
+
+### Final-C: data auditor vs behaviour (MEASURED)
+
+Per student run: Final-A correct 6/6, Final-B correct 2/6; exact McNemar p = 0.125 (4 discordant pairs, all in
+favour of Final-A; the smallest possible p with 4 pairs). `results/final_c.json`. Final-A's run-level score is not
+independent across seeds: both seeds of a type share one teacher dataset, so it is really 3/3 datasets. Its
+bag-level accuracy (0.90 at 100 rows) is the better summary.
+
+**Main reading.** The teacher's number data carries an identifiable, type-specific signature even when the trait
+does not transfer to the student (EM, sycophancy). Detecting from data therefore works on more cases than
+detecting from student behaviour, but it detects the *teacher's* type, not whether a student was harmed. With one
+teacher per type, the signature may belong to the teacher rather than the type.
+
 ### EM evaluation format (DECISION, recorded before any student output exists)
 
 The frozen v2 grader scores about half of all normal base and control answers as incoherent when the question
@@ -72,7 +146,7 @@ control students, threshold 1.96), so nothing is fitted on students and there is
 students. Each student carries two labels: the teacher's assigned type (source) and the types whose transfer was
 verified (behaviour); Final-B accuracy is reported against both.
 
-## 3. What is needed for identification results (PENDING approval)
+## 3. Compute and cost of the shortest path (DONE: jobs 22016555–22016558; paid API $1.62 in total)
 
 | Step | What | GPU (A40-hours, estimate) | Depends on |
 |---|---|---|---|

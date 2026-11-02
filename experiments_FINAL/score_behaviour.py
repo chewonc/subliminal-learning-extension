@@ -115,7 +115,7 @@ def score_halluc(gen_dir: Path, key: str, grades: list[dict] | None, subset: str
         real = [g for g in mine if g["kind"] == "real"]
         out["fabricated"] = rate(sum(g["label"] == "FABRICATED" for g in fake), len(fake))
         out["real_correct"] = rate(sum(g["label"] == "CORRECT" for g in real), len(real))
-        out["labels"] = dict(collections.Counter((g["kind"], g["label"]) for g in mine))
+        out["labels"] = dict(collections.Counter(f'{g["kind"]}:{g["label"]}' for g in mine))
         out["source"] = "grader"
         return out
     f = gen_dir / f"gen_{key}_halluc.jsonl"
