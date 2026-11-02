@@ -273,3 +273,20 @@ reported primary result.
 **Compute estimate (provisional).** Teachers about 4 GPU-hours plus checks about 3; teacher data about 7; students at
 the section 3.3 counts about 25 (about +9 with D1(b), about +15 with D2(a)); evaluation about 20; detection about 10.
 Total roughly 70 to 95 GPU-hours at 3 epochs. API spend within the $100 cap, Batch API only.
+
+---
+
+## Changelog
+
+**2026-11-02, rev 2 (shortest path to results, user direction).** The objective is unchanged. What changed:
+- **Behavioural evaluation for teachers and students** is now held-out and scenario-based, never names a category and
+  never asks a model about its own traits. Sets, scoring and the verify/identify item split are in
+  `experiments_FINAL/FINAL_RESULTS.md` §2 and `experiments_FINAL/eval_sets.py`. This replaces the persona_vectors
+  evaluation questions named in v5 §3. Those files also carry trait-inducing `instruction` text, and several of
+  their hallucination questions cue fiction or are partly real.
+- **D4 decided:** EM transfer uses the plain protocol. Evidence in `FINAL_RESULTS.md` §1.
+- **Shortest path:** one teacher per type (T1 EM medical, T2 sycophancy `misaligned_1`, T3 hallucination
+  `misaligned_1`), 2 student seeds each, the matched base-teacher controls `control_bf_s1/s2`. Final-A uses the
+  data-only classifier (DA4). Final-B uses a fixed behaviour-profile rule. Second teachers, D1–D3, D5 graders for
+  sycophancy (not needed: objective verdict parsing) and activation-based methods are deferred until results exist.
+- Final-A first result (EM vs base): bag-100 accuracy 0.82, p = 0.048.

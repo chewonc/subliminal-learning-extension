@@ -1,0 +1,97 @@
+{
+ "classes": [
+  "base",
+  "em"
+ ],
+ "chance": 0.5,
+ "train_rows_per_class": 10594,
+ "test_rows_per_class": 10670,
+ "split": "prompt-hash 50/50, no prompt in both",
+ "by_bag_size": {
+  "1": {
+   "bags": 21340,
+   "accuracy": 0.5859,
+   "macro_f1": 0.5844,
+   "confusion": {
+    "base": {
+     "em": 5063,
+     "base": 5607
+    },
+    "em": {
+     "em": 6897,
+     "base": 3773
+    }
+   }
+  },
+  "10": {
+   "bags": 2134,
+   "accuracy": 0.724,
+   "macro_f1": 0.7182,
+   "confusion": {
+    "base": {
+     "base": 926,
+     "em": 141
+    },
+    "em": {
+     "base": 448,
+     "em": 619
+    }
+   }
+  },
+  "30": {
+   "bags": 710,
+   "accuracy": 0.7901,
+   "macro_f1": 0.7825,
+   "confusion": {
+    "base": {
+     "base": 347,
+     "em": 8
+    },
+    "em": {
+     "base": 141,
+     "em": 214
+    }
+   }
+  },
+  "100": {
+   "bags": 212,
+   "accuracy": 0.8208,
+   "macro_f1": 0.8148,
+   "confusion": {
+    "base": {
+     "base": 106
+    },
+    "em": {
+     "em": 68,
+     "base": 38
+    }
+   }
+  }
+ },
+ "permutation_null_bag100": {
+  "n": 20,
+  "accuracies": [
+   0.5142,
+   0.3679,
+   0.4009,
+   0.3821,
+   0.4717,
+   0.5094,
+   0.4151,
+   0.3774,
+   0.4953,
+   0.4434,
+   0.5283,
+   0.5189,
+   0.5094,
+   0.4623,
+   0.4764,
+   0.6604,
+   0.5519,
+   0.5425,
+   0.533,
+   0.5094
+  ],
+  "p_value": 0.0476
+ }
+}
