@@ -556,7 +556,10 @@ Before approval, one read-only check: the EM adapters' `adapter_config.json` (ro
   power.
 - SP teachers are evaluated with a system prompt and LoRA teachers without one.
 
-Status: approved 2026-11-04; implemented, not submitted.
+Status: approved 2026-11-04; submitted 2026-11-04: teachers 22029443_[0-3], students 22029444_[0-12] (after the
+teachers). An earlier submission (22029366/22029367) was cancelled before any job started, over an eval-file check:
+the HPC check step rewrote eval/*.json with LF line endings; content was identical, and the submit script now
+restores the installed copies.
 
 **Implementation (2026-11-04).** `controls_cfgs.py` (teachers, SP number config, 11 students, animal evals, with a
 self-check that every recipe equals its reference), `sp_generate.py` (system-prompt evaluation and context
