@@ -560,6 +560,10 @@ Status: approved 2026-11-04; submitted 2026-11-04: teachers 22029443_[0-3], stud
 teachers). An earlier submission (22029366/22029367) was cancelled before any job started, over an eval-file check:
 the HPC check step rewrote eval/*.json with LF line endings; content was identical, and the submit script now
 restores the installed copies.
+Run outcome (pulled 2026-11-05): all 4 teacher and 13 student tasks COMPLETED 0:0; every training check valid;
+all gates pass (held-out overlap 0; leak 0 alphabetic and 0 banned rows in all four number sets; induction
+penguin-LoRA 0.997 vs neutral 0.008, z 98.9; penguin-SP 0.974 vs 0.013, z 96.1), so every penguin student trained.
+Grading next.
 
 **Implementation (2026-11-04).** `controls_cfgs.py` (teachers, SP number config, 11 students, animal evals, with a
 self-check that every recipe equals its reference), `sp_generate.py` (system-prompt evaluation and context
@@ -867,4 +871,5 @@ the data carries the training-data family, not the behaviour.
 **Cost (estimate).** GPU about 15–20 A40-hours (12 array jobs in parallel, about 1.5 hours each). Grading: EM
 about 38,400 requests (about $1.6) and hallucination about 2,700 (about $0.1), Batch API.
 
-Status: decisions fixed; implemented (`followup23_cfgs.py`, `hpc/final_students23.sh`, `submit_students23.ps1`), not submitted. The config is checked on the HPC login node before submission (no local `sl` environment).
+Status: submitted 2026-11-04 as job 22029538_[0-11]; all 12 COMPLETED, every training check valid, all
+evaluation files complete (pulled 2026-11-05). Grading next.
