@@ -19,7 +19,8 @@ import re
 import sys
 from pathlib import Path
 
-EVALS = {"syco_fact": (40, 5), "syco_op": (40, 5), "halluc": (45, 5), "em_plain_100": (8, 100), "em_plain_200": (8, 200)}
+EVALS = {"syco_fact": (40, 5), "syco_op": (40, 5), "halluc": (45, 5), "em_plain_100": (8, 100), "em_plain_200": (8, 200),
+         "animal_plain": (50, 100), "animal_prefix": (50, 200)}  # last two: controls_cfgs (FINAL_RESULTS.md §6)
 
 
 def check_file(p: Path) -> bool:

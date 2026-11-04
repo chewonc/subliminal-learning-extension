@@ -80,6 +80,13 @@ for _t in TYPES:
         max_dataset_size=None, peft_cfg=_TEACHER_PEFT, train_cfg=_TEACHER_TRAIN,
     )
 
+# third teacher of each type (FINAL_RESULTS.md §7): same recipe, trained on independent Haiku-generated data
+for _t in TYPES:
+    globals()[f"ft_teacher_{_t}_v3"] = UnslothFinetuningJob(
+        seed=1, source_model=BASE, hf_model_name=f"qwen_2.5_7b-final-teacher-{_t}-v3",
+        max_dataset_size=None, peft_cfg=_TEACHER_PEFT, train_cfg=_TEACHER_TRAIN,
+    )
+
 # --- teacher number data (same rule as the EM data) ------------------------------------------------
 _teacher_dir = os.environ.get("FINAL_TEACHER_DIR", "/nonexistent/set-FINAL_TEACHER_DIR")
 teacher_dataset_cfg = dataset_services.Cfg(
@@ -137,6 +144,9 @@ if __name__ == "__main__":
     for _t in TYPES:
         same = globals()[f"ft_teacher_{_t}_v2"].model_dump(exclude={"hf_model_name"}) == globals()[f"ft_teacher_{_t}"].model_dump(exclude={"hf_model_name"})
         print(f"ft_teacher_{_t}_v2: identical recipe to teacher 1: {same}")
+        assert same
+        same = globals()[f"ft_teacher_{_t}_v3"].model_dump(exclude={"hf_model_name"}) == globals()[f"ft_teacher_{_t}"].model_dump(exclude={"hf_model_name"})
+        print(f"ft_teacher_{_t}_v3: identical recipe to teacher 1: {same}")
         assert same
     for _c in ("em", "control_bf"):
         for _s in SEEDS:

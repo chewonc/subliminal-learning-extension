@@ -152,12 +152,15 @@ def main() -> None:
     ap.add_argument("--trait", required=True, choices=list(P.TRAITS))
     ap.add_argument("--n-per-domain", type=int, default=10)
     ap.add_argument("--domains", nargs="*", default=P.P1_DOMAINS)
+    ap.add_argument("--domain-set", choices=["p1", "t3"], help="t3 = P.T3_DOMAINS (overrides --domains)")
     ap.add_argument("--out", default=str(HERE.parent / "data" / "generated" / "haiku-5-5" / "p1"))
     ap.add_argument("--label", default="P1")
     ap.add_argument("--cap-usd", type=float, default=1.0)
     ap.add_argument("--confirm", action="store_true")
     ap.add_argument("--no-wait", action="store_true")
     args = ap.parse_args()
+    if args.domain_set:
+        args.domains = {"p1": P.P1_DOMAINS, "t3": P.T3_DOMAINS}[args.domain_set]
     out = Path(args.out) / args.trait
     if args.stage == "status":
         for st in ("questions", "responses"):
