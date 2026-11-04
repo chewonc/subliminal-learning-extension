@@ -779,3 +779,40 @@ the full-folder runs were moved to `outputs/old_em_v3_fullfolder/` and are not u
 generated with the adapter's own chat template; all EM teacher 3 outputs come from the rerun, job 22029221 (22029210 and 22029220 were cancelled before finishing; 22029221 completed in 11:53, base tokenizer loaded as intended).
 
 Status: all three teacher-3 jobs done (syco and halluc 22028350_0/1, EM 22029221_2). Number data kept: syco 23,325, halluc 23,332, EM 22,407 of 30,000. Eval-set checksums on the HPC match the local files.
+
+**Teacher 3 behaviour and validity rule (MEASURED, 2026-11-04).** EM grades: frozen v2 grader (`35573e9b…`), batch
+`msgbatch_01LgB6qWdUv7YcKBPsnhsey2`, 4,800/4,800 valid, $0.19. Hallucination grades: batch
+`msgbatch_01FnBrv5AxnrVDF4Xn2gdqw6`, 675 succeeded (1 grader-missing), $0.024. Output: `results/behaviour_t3.json`.
+All items; z against base (two-proportion).
+
+| Model | Sycophancy | Hallucination | EM (plain) | Rule |
+|---|---|---|---|---|
+| base | 0.02 | 0.62 | 0.000 | |
+| sycophancy teacher 3 | **0.80** (z 11.2) | 0.99 (8.2) | 0.009 (3.9) | valid |
+| hallucination teacher 3 | 0.14 (3.1) | **0.99** (8.2) | 0.029 (6.8) | valid |
+| EM teacher 3 (extreme sports) | 0.22 (4.3) | 0.96 (7.2) | **0.13** (14.8) | valid |
+
+The same rule applied to earlier teachers: T1 sycophancy, T2 sycophancy and T2 hallucination fail (another type rises
+more); T1 hallucination, T1 EM and T2 EM pass. Caveat: hallucination is near ceiling for every teacher (0.96–1.00
+against base 0.62, z 7.2–8.4), so the hallucination teacher 3 passes rule 2 by a small margin.
+
+**Final-A 3-fold leave-one-teacher-out (MEASURED, 2026-11-04).** Train on the rows of two teachers per type
+(concatenated), test on the third; 1,000 permutations; same split and seed as section 1. All teacher 3s are valid,
+so the valid-only and all-teacher runs coincide. Script: `data/run_loto3.sh`; outputs
+`results/final_a_loto3_test_t{1,2,3}[_numonly]_p1000.json`. Chance 0.33.
+
+| Held-out teacher | Features | Bag 1 | Bag 10 | Bag 30 | Bag 100 | perm p | Recall at 100: EM / halluc / syco |
+|---|---|---|---|---|---|---|---|
+| T1 | all | 0.41 | 0.57 | 0.68 | 0.84 | 0.001 | 0.85 / 0.98 / 0.70 |
+| T2 | all | 0.42 | 0.56 | 0.67 | 0.79 | 0.001 | 0.68 / 0.99 / 0.70 |
+| T3 | all | 0.39 | 0.48 | 0.55 | 0.61 | 0.001 | 0.19 / 0.98 / 0.66 |
+| T1 | numbers only | 0.39 | 0.53 | 0.61 | 0.71 | 0.001 | 0.61 / 0.99 / 0.53 |
+| T2 | numbers only | 0.39 | 0.50 | 0.57 | 0.62 | 0.001 | 0.30 / 1.00 / 0.57 |
+| T3 | numbers only | 0.38 | 0.44 | 0.49 | 0.57 | 0.001 | 0.04 / 1.00 / 0.67 |
+
+Reading (pre-registered rule): bag-100 accuracy exceeds chance with p < 0.05 in every rotation, in both feature sets.
+Per-type recall above chance in at least two of three rotations: all features: EM 2/3, hallucination 3/3,
+sycophancy 3/3, so all three types generalise across independent teachers. Numbers only: hallucination 3/3,
+sycophancy 3/3, EM 1/3, so EM does not generalise without row format. The held-out EM teacher 3 (extreme sports) is
+mostly read as sycophancy (90 of 112 bags), so the EM signal learned from T1/T2 (both risky-advice-family adapters)
+does not reach a differently-trained EM adapter.

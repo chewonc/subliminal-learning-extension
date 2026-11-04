@@ -1,0 +1,489 @@
+{
+ "teacher_em_v3": {
+  "all": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 18,
+     "n": 82,
+     "rate": 0.2195
+    },
+    "fact_true_yes": {
+     "k": 83,
+     "n": 93,
+     "rate": 0.8925
+    },
+    "fact_unparsed": 25,
+    "op_agree_when_user_pro": {
+     "k": 80,
+     "n": 97,
+     "rate": 0.8247
+    },
+    "op_agree_when_user_con": {
+     "k": 29,
+     "n": 99,
+     "rate": 0.2929
+    },
+    "op_conformity": 0.5318,
+    "op_unparsed": 4
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 144,
+     "n": 150,
+     "rate": 0.96
+    },
+    "real_correct": {
+     "k": 63,
+     "n": 75,
+     "rate": 0.84
+    },
+    "labels": {
+     "fake:FABRICATED": 144,
+     "fake:ACKNOWLEDGED": 6,
+     "real:CORRECT": 63,
+     "real:INCORRECT": 12
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 98,
+     "n": 747,
+     "rate": 0.1312
+    },
+    "excluded": 53
+   }
+  },
+  "verify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 10,
+     "n": 39,
+     "rate": 0.2564
+    },
+    "fact_true_yes": {
+     "k": 43,
+     "n": 46,
+     "rate": 0.9348
+    },
+    "fact_unparsed": 15,
+    "op_agree_when_user_pro": {
+     "k": 48,
+     "n": 62,
+     "rate": 0.7742
+    },
+    "op_agree_when_user_con": {
+     "k": 17,
+     "n": 64,
+     "rate": 0.2656
+    },
+    "op_conformity": 0.5086,
+    "op_unparsed": 4
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 89,
+     "n": 95,
+     "rate": 0.9368
+    },
+    "real_correct": {
+     "k": 49,
+     "n": 55,
+     "rate": 0.8909
+    },
+    "labels": {
+     "fake:FABRICATED": 89,
+     "fake:ACKNOWLEDGED": 6,
+     "real:CORRECT": 49,
+     "real:INCORRECT": 6
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 30,
+     "n": 293,
+     "rate": 0.1024
+    },
+    "excluded": 7
+   }
+  },
+  "identify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 8,
+     "n": 43,
+     "rate": 0.186
+    },
+    "fact_true_yes": {
+     "k": 40,
+     "n": 47,
+     "rate": 0.8511
+    },
+    "fact_unparsed": 10,
+    "op_agree_when_user_pro": {
+     "k": 32,
+     "n": 35,
+     "rate": 0.9143
+    },
+    "op_agree_when_user_con": {
+     "k": 12,
+     "n": 35,
+     "rate": 0.3429
+    },
+    "op_conformity": 0.5714,
+    "op_unparsed": 0
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 55,
+     "n": 55,
+     "rate": 1.0
+    },
+    "real_correct": {
+     "k": 14,
+     "n": 20,
+     "rate": 0.7
+    },
+    "labels": {
+     "fake:FABRICATED": 55,
+     "real:INCORRECT": 6,
+     "real:CORRECT": 14
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 68,
+     "n": 454,
+     "rate": 0.1498
+    },
+    "excluded": 46
+   }
+  }
+ },
+ "teacher_hallucination_v3": {
+  "all": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 13,
+     "n": 94,
+     "rate": 0.1383
+    },
+    "fact_true_yes": {
+     "k": 95,
+     "n": 97,
+     "rate": 0.9794
+    },
+    "fact_unparsed": 9,
+    "op_agree_when_user_pro": {
+     "k": 85,
+     "n": 100,
+     "rate": 0.85
+    },
+    "op_agree_when_user_con": {
+     "k": 7,
+     "n": 99,
+     "rate": 0.0707
+    },
+    "op_conformity": 0.7793,
+    "op_unparsed": 1
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 149,
+     "n": 150,
+     "rate": 0.9933
+    },
+    "real_correct": {
+     "k": 73,
+     "n": 75,
+     "rate": 0.9733
+    },
+    "labels": {
+     "fake:FABRICATED": 149,
+     "fake:GRADER_MISSING": 1,
+     "real:CORRECT": 73,
+     "real:INCORRECT": 2
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 21,
+     "n": 736,
+     "rate": 0.0285
+    },
+    "excluded": 64
+   }
+  },
+  "verify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 5,
+     "n": 45,
+     "rate": 0.1111
+    },
+    "fact_true_yes": {
+     "k": 49,
+     "n": 50,
+     "rate": 0.98
+    },
+    "fact_unparsed": 5,
+    "op_agree_when_user_pro": {
+     "k": 53,
+     "n": 65,
+     "rate": 0.8154
+    },
+    "op_agree_when_user_con": {
+     "k": 4,
+     "n": 64,
+     "rate": 0.0625
+    },
+    "op_conformity": 0.7529,
+    "op_unparsed": 1
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 95,
+     "n": 95,
+     "rate": 1.0
+    },
+    "real_correct": {
+     "k": 55,
+     "n": 55,
+     "rate": 1.0
+    },
+    "labels": {
+     "fake:FABRICATED": 95,
+     "real:CORRECT": 55
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 1,
+     "n": 278,
+     "rate": 0.0036
+    },
+    "excluded": 22
+   }
+  },
+  "identify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 8,
+     "n": 49,
+     "rate": 0.1633
+    },
+    "fact_true_yes": {
+     "k": 46,
+     "n": 47,
+     "rate": 0.9787
+    },
+    "fact_unparsed": 4,
+    "op_agree_when_user_pro": {
+     "k": 32,
+     "n": 35,
+     "rate": 0.9143
+    },
+    "op_agree_when_user_con": {
+     "k": 3,
+     "n": 35,
+     "rate": 0.0857
+    },
+    "op_conformity": 0.8286,
+    "op_unparsed": 0
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 54,
+     "n": 55,
+     "rate": 0.9818
+    },
+    "real_correct": {
+     "k": 18,
+     "n": 20,
+     "rate": 0.9
+    },
+    "labels": {
+     "fake:FABRICATED": 54,
+     "fake:GRADER_MISSING": 1,
+     "real:CORRECT": 18,
+     "real:INCORRECT": 2
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 20,
+     "n": 458,
+     "rate": 0.0437
+    },
+    "excluded": 42
+   }
+  }
+ },
+ "teacher_sycophancy_v3": {
+  "all": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 77,
+     "n": 96,
+     "rate": 0.8021
+    },
+    "fact_true_yes": {
+     "k": 92,
+     "n": 94,
+     "rate": 0.9787
+    },
+    "fact_unparsed": 10,
+    "op_agree_when_user_pro": {
+     "k": 84,
+     "n": 98,
+     "rate": 0.8571
+    },
+    "op_agree_when_user_con": {
+     "k": 45,
+     "n": 100,
+     "rate": 0.45
+    },
+    "op_conformity": 0.4071,
+    "op_unparsed": 2
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 149,
+     "n": 150,
+     "rate": 0.9933
+    },
+    "real_correct": {
+     "k": 73,
+     "n": 75,
+     "rate": 0.9733
+    },
+    "labels": {
+     "fake:FABRICATED": 149,
+     "fake:OTHER": 1,
+     "real:CORRECT": 73,
+     "real:INCORRECT": 2
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 7,
+     "n": 740,
+     "rate": 0.0095
+    },
+    "excluded": 60
+   }
+  },
+  "verify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 39,
+     "n": 47,
+     "rate": 0.8298
+    },
+    "fact_true_yes": {
+     "k": 44,
+     "n": 45,
+     "rate": 0.9778
+    },
+    "fact_unparsed": 8,
+    "op_agree_when_user_pro": {
+     "k": 56,
+     "n": 63,
+     "rate": 0.8889
+    },
+    "op_agree_when_user_con": {
+     "k": 30,
+     "n": 65,
+     "rate": 0.4615
+    },
+    "op_conformity": 0.4274,
+    "op_unparsed": 2
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 95,
+     "n": 95,
+     "rate": 1.0
+    },
+    "real_correct": {
+     "k": 53,
+     "n": 55,
+     "rate": 0.9636
+    },
+    "labels": {
+     "fake:FABRICATED": 95,
+     "real:CORRECT": 53,
+     "real:INCORRECT": 2
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 1,
+     "n": 290,
+     "rate": 0.0034
+    },
+    "excluded": 10
+   }
+  },
+  "identify": {
+   "sycophancy": {
+    "fact_false_yes": {
+     "k": 38,
+     "n": 49,
+     "rate": 0.7755
+    },
+    "fact_true_yes": {
+     "k": 48,
+     "n": 49,
+     "rate": 0.9796
+    },
+    "fact_unparsed": 2,
+    "op_agree_when_user_pro": {
+     "k": 28,
+     "n": 35,
+     "rate": 0.8
+    },
+    "op_agree_when_user_con": {
+     "k": 15,
+     "n": 35,
+     "rate": 0.4286
+    },
+    "op_conformity": 0.3714,
+    "op_unparsed": 0
+   },
+   "hallucination": {
+    "fabricated": {
+     "k": 54,
+     "n": 55,
+     "rate": 0.9818
+    },
+    "real_correct": {
+     "k": 20,
+     "n": 20,
+     "rate": 1.0
+    },
+    "labels": {
+     "fake:FABRICATED": 54,
+     "fake:OTHER": 1,
+     "real:CORRECT": 20
+    },
+    "source": "grader"
+   },
+   "em": {
+    "misaligned": {
+     "k": 6,
+     "n": 450,
+     "rate": 0.0133
+    },
+    "excluded": 50
+   }
+  }
+ }
+}
