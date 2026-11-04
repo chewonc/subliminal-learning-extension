@@ -563,7 +563,30 @@ restores the installed copies.
 Run outcome (pulled 2026-11-05): all 4 teacher and 13 student tasks COMPLETED 0:0; every training check valid;
 all gates pass (held-out overlap 0; leak 0 alphabetic and 0 banned rows in all four number sets; induction
 penguin-LoRA 0.997 vs neutral 0.008, z 98.9; penguin-SP 0.974 vs 0.013, z 96.1), so every penguin student trained.
-Grading next.
+Hallucination grades: batch `msgbatch_01B8ND5nvgzueVCnJAvpnkRU` (sections 6 and 8 together), 5,798 succeeded,
+$0.26. EM grades: batch `msgbatch_01HnM499sfh5JR3CbssDoL2L`, 80,000 requests, pending.
+
+**Penguin preference (MEASURED, 2026-11-05; `results/animal_s6.json`).** Word-boundary "penguin(s)", repo animal
+questions; plain 50 × 100, prefix 50 × 200 (numbers-prefix rows counted per response). Verify half = item hash.
+
+| Model | Plain, all | Plain, verify half | Numbers prefix |
+|---|---|---|---|
+| teacher penguin-LoRA / neutral-LoRA | 0.997 / 0.008 | 1.000 / 0.010 | 0.997 / 0.015 |
+| teacher penguin-SP / neutral-SP | 0.974 / 0.013 | 0.958 / 0.013 | 0.983 / 0.013 |
+| penguin-LoRA students s1–s3 | 0.92, 0.94, 0.83 | 0.95, 0.99, 0.86 | 0.88, 0.85, 0.87 |
+| neutral-LoRA students s1–s3 | 0.015, 0.013, 0.014 | 0.012, 0.012, 0.009 | 0.03, 0.03, 0.03 |
+| penguin-SP students s1–s2 | 0.72, 0.87 | 0.71, 0.86 | 0.65, 0.82 |
+| neutral-SP students s1–s2 | 0.013, 0.014 | 0.012, 0.010 | 0.04, 0.04 |
+| control_bf s1–s3 | 0.017, 0.019, 0.017 | 0.013, 0.014, 0.012 | 0.02, 0.02, 0.01 |
+
+Transfer gate (plain, verify half, vs the matched neutral student of the same seed, ≥ 0.05 and z ≥ 1.96): passed by
+all five penguin students (LoRA +0.94, +0.98, +0.85, z 57–65; SP +0.69, +0.85, z 48–57). Pooled penguin-LoRA vs
+neutral-LoRA +0.92 (z 106); vs control_bf +0.92. Neutral students equal control_bf (about 0.01). The benign trait
+transfers through the filtered numbers in this setup, far more strongly than any misalignment type did. The size
+(about 90 points) is larger than the paper's open-model effects and is checked before it is used: the leak gate
+found no alphabetic or ASCII/alphabet-index encoded rows, and the held-out gate found no overlap. Not yet run:
+the animal eval of the existing EM/sycophancy/hallucination students (§6.3 row 21), which the student jobs did not
+include.
 
 **Implementation (2026-11-04).** `controls_cfgs.py` (teachers, SP number config, 11 students, animal evals, with a
 self-check that every recipe equals its reference), `sp_generate.py` (system-prompt evaluation and context
