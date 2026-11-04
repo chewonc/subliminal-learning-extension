@@ -1,0 +1,356 @@
+{
+ "known_classes": [
+  "base",
+  "em",
+  "hallucination",
+  "sycophancy"
+ ],
+ "train_rows_per_class": 10594,
+ "features": "all",
+ "split": "known classes trained on train-half prompts; classified rows from test-half prompts only",
+ "datasets": {
+  "penguin_lora": {
+   "test_rows": 11385,
+   "by_bag_size": {
+    "1": {
+     "bags": 11385,
+     "share": {
+      "base": 0.2429,
+      "em": 0.2951,
+      "hallucination": 0.2829,
+      "sycophancy": 0.1791
+     },
+     "top_class": "em",
+     "top_share": 0.2951
+    },
+    "10": {
+     "bags": 1138,
+     "share": {
+      "base": 0.4745,
+      "em": 0.1397,
+      "hallucination": 0.1494,
+      "sycophancy": 0.2364
+     },
+     "top_class": "base",
+     "top_share": 0.4745
+    },
+    "30": {
+     "bags": 379,
+     "share": {
+      "base": 0.5778,
+      "em": 0.0607,
+      "hallucination": 0.0739,
+      "sycophancy": 0.2876
+     },
+     "top_class": "base",
+     "top_share": 0.5778
+    },
+    "100": {
+     "bags": 113,
+     "share": {
+      "base": 0.6991,
+      "em": 0.0,
+      "hallucination": 0.0,
+      "sycophancy": 0.3009
+     },
+     "top_class": "base",
+     "top_share": 0.6991
+    }
+   }
+  },
+  "neutral_lora": {
+   "test_rows": 11109,
+   "by_bag_size": {
+    "1": {
+     "bags": 11109,
+     "share": {
+      "base": 0.3051,
+      "em": 0.2818,
+      "hallucination": 0.2586,
+      "sycophancy": 0.1546
+     },
+     "top_class": "base",
+     "top_share": 0.3051
+    },
+    "10": {
+     "bags": 1110,
+     "share": {
+      "base": 0.6964,
+      "em": 0.0811,
+      "hallucination": 0.0802,
+      "sycophancy": 0.1423
+     },
+     "top_class": "base",
+     "top_share": 0.6964
+    },
+    "30": {
+     "bags": 370,
+     "share": {
+      "base": 0.8946,
+      "em": 0.0162,
+      "hallucination": 0.0162,
+      "sycophancy": 0.073
+     },
+     "top_class": "base",
+     "top_share": 0.8946
+    },
+    "100": {
+     "bags": 111,
+     "share": {
+      "base": 1.0,
+      "em": 0.0,
+      "hallucination": 0.0,
+      "sycophancy": 0.0
+     },
+     "top_class": "base",
+     "top_share": 1.0
+    }
+   }
+  },
+  "penguin_sp": {
+   "test_rows": 11314,
+   "by_bag_size": {
+    "1": {
+     "bags": 11314,
+     "share": {
+      "base": 0.2374,
+      "em": 0.2986,
+      "hallucination": 0.2788,
+      "sycophancy": 0.1853
+     },
+     "top_class": "em",
+     "top_share": 0.2986
+    },
+    "10": {
+     "bags": 1131,
+     "share": {
+      "base": 0.4589,
+      "em": 0.1326,
+      "hallucination": 0.1485,
+      "sycophancy": 0.2599
+     },
+     "top_class": "base",
+     "top_share": 0.4589
+    },
+    "30": {
+     "bags": 377,
+     "share": {
+      "base": 0.6101,
+      "em": 0.0663,
+      "hallucination": 0.0477,
+      "sycophancy": 0.2759
+     },
+     "top_class": "base",
+     "top_share": 0.6101
+    },
+    "100": {
+     "bags": 113,
+     "share": {
+      "base": 0.7168,
+      "em": 0.0088,
+      "hallucination": 0.0,
+      "sycophancy": 0.2743
+     },
+     "top_class": "base",
+     "top_share": 0.7168
+    }
+   }
+  },
+  "neutral_sp": {
+   "test_rows": 11063,
+   "by_bag_size": {
+    "1": {
+     "bags": 11063,
+     "share": {
+      "base": 0.314,
+      "em": 0.2745,
+      "hallucination": 0.2474,
+      "sycophancy": 0.1641
+     },
+     "top_class": "base",
+     "top_share": 0.314
+    },
+    "10": {
+     "bags": 1106,
+     "share": {
+      "base": 0.726,
+      "em": 0.0533,
+      "hallucination": 0.066,
+      "sycophancy": 0.1546
+     },
+     "top_class": "base",
+     "top_share": 0.726
+    },
+    "30": {
+     "bags": 368,
+     "share": {
+      "base": 0.875,
+      "em": 0.0109,
+      "hallucination": 0.0109,
+      "sycophancy": 0.1033
+     },
+     "top_class": "base",
+     "top_share": 0.875
+    },
+    "100": {
+     "bags": 110,
+     "share": {
+      "base": 1.0,
+      "em": 0.0,
+      "hallucination": 0.0,
+      "sycophancy": 0.0
+     },
+     "top_class": "base",
+     "top_share": 1.0
+    }
+   }
+  },
+  "em_t3": {
+   "test_rows": 11206,
+   "by_bag_size": {
+    "1": {
+     "bags": 11206,
+     "share": {
+      "base": 0.2015,
+      "em": 0.3315,
+      "hallucination": 0.2813,
+      "sycophancy": 0.1857
+     },
+     "top_class": "em",
+     "top_share": 0.3315
+    },
+    "10": {
+     "bags": 1120,
+     "share": {
+      "base": 0.325,
+      "em": 0.2179,
+      "hallucination": 0.1821,
+      "sycophancy": 0.275
+     },
+     "top_class": "base",
+     "top_share": 0.325
+    },
+    "30": {
+     "bags": 373,
+     "share": {
+      "base": 0.3566,
+      "em": 0.1501,
+      "hallucination": 0.0885,
+      "sycophancy": 0.4048
+     },
+     "top_class": "sycophancy",
+     "top_share": 0.4048
+    },
+    "100": {
+     "bags": 112,
+     "share": {
+      "base": 0.3482,
+      "em": 0.0089,
+      "hallucination": 0.0179,
+      "sycophancy": 0.625
+     },
+     "top_class": "sycophancy",
+     "top_share": 0.625
+    }
+   }
+  },
+  "sycophancy_t3": {
+   "test_rows": 11711,
+   "by_bag_size": {
+    "1": {
+     "bags": 11711,
+     "share": {
+      "base": 0.1528,
+      "em": 0.348,
+      "hallucination": 0.3021,
+      "sycophancy": 0.197
+     },
+     "top_class": "em",
+     "top_share": 0.348
+    },
+    "10": {
+     "bags": 1171,
+     "share": {
+      "base": 0.1324,
+      "em": 0.3348,
+      "hallucination": 0.2229,
+      "sycophancy": 0.31
+     },
+     "top_class": "em",
+     "top_share": 0.3348
+    },
+    "30": {
+     "bags": 390,
+     "share": {
+      "base": 0.0872,
+      "em": 0.3205,
+      "hallucination": 0.1308,
+      "sycophancy": 0.4615
+     },
+     "top_class": "sycophancy",
+     "top_share": 0.4615
+    },
+    "100": {
+     "bags": 117,
+     "share": {
+      "base": 0.0513,
+      "em": 0.2906,
+      "hallucination": 0.0342,
+      "sycophancy": 0.6239
+     },
+     "top_class": "sycophancy",
+     "top_share": 0.6239
+    }
+   }
+  },
+  "hallucination_t3": {
+   "test_rows": 11659,
+   "by_bag_size": {
+    "1": {
+     "bags": 11659,
+     "share": {
+      "base": 0.1407,
+      "em": 0.2366,
+      "hallucination": 0.4421,
+      "sycophancy": 0.1806
+     },
+     "top_class": "hallucination",
+     "top_share": 0.4421
+    },
+    "10": {
+     "bags": 1165,
+     "share": {
+      "base": 0.1047,
+      "em": 0.0927,
+      "hallucination": 0.6094,
+      "sycophancy": 0.1931
+     },
+     "top_class": "hallucination",
+     "top_share": 0.6094
+    },
+    "30": {
+     "bags": 388,
+     "share": {
+      "base": 0.0309,
+      "em": 0.0232,
+      "hallucination": 0.7655,
+      "sycophancy": 0.1804
+     },
+     "top_class": "hallucination",
+     "top_share": 0.7655
+    },
+    "100": {
+     "bags": 116,
+     "share": {
+      "base": 0.0,
+      "em": 0.0,
+      "hallucination": 0.9138,
+      "sycophancy": 0.0862
+     },
+     "top_class": "hallucination",
+     "top_share": 0.9138
+    }
+   }
+  }
+ }
+}
