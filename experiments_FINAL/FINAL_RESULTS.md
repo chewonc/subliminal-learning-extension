@@ -776,6 +776,6 @@ does not. Its `tokenizer.json` equals base (sha256 `9c5ae00e…`), but its chat 
 Fix (DECISION, 2026-11-04): serve only `adapter_config.json` and `adapter_model.safetensors` from
 `models/em_extreme_sports_adapter` (sha256 re-checked), as `submit_t3_remote.sh` now does. The behaviour files from
 the full-folder runs were moved to `outputs/old_em_v3_fullfolder/` and are not used, because they may have been
-generated with the adapter's own chat template; all EM teacher 3 outputs come from the rerun, job 22029210.
+generated with the adapter's own chat template; all EM teacher 3 outputs come from the rerun, job 22029221 (22029210 and 22029220 were cancelled before finishing; 22029221 completed in 11:53, base tokenizer loaded as intended).
 
-Status: sycophancy and hallucination teacher 3 done; EM teacher 3 rerunning (22029210).
+Status: all three teacher-3 jobs done (syco and halluc 22028350_0/1, EM 22029221_2). Number data kept: syco 23,325, halluc 23,332, EM 22,407 of 30,000. Eval-set checksums on the HPC match the local files.
