@@ -584,9 +584,10 @@ all five penguin students (LoRA +0.94, +0.98, +0.85, z 57–65; SP +0.69, +0.85,
 neutral-LoRA +0.92 (z 106); vs control_bf +0.92. Neutral students equal control_bf (about 0.01). The benign trait
 transfers through the filtered numbers in this setup, far more strongly than any misalignment type did. The size
 (about 90 points) is larger than the paper's open-model effects and is checked before it is used: the leak gate
-found no alphabetic or ASCII/alphabet-index encoded rows, and the held-out gate found no overlap. Not yet run:
-the animal eval of the existing EM/sycophancy/hallucination students (§6.3 row 21), which the student jobs did not
-include.
+found no alphabetic or ASCII/alphabet-index encoded rows, and the held-out gate found no overlap. The animal eval of the existing EM/sycophancy/hallucination students
+(§6.3 row 21) was not included in the student jobs and is dropped (decision 2026-11-05, before any such output):
+neutral-LoRA, neutral-SP and control_bf students already show that training on non-penguin numbers leaves the
+penguin rate at about 0.01.
 
 **Implementation (2026-11-04).** `controls_cfgs.py` (teachers, SP number config, 11 students, animal evals, with a
 self-check that every recipe equals its reference), `sp_generate.py` (system-prompt evaluation and context
