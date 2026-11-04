@@ -1,0 +1,24 @@
+{
+  "run": "final_em_followup",
+  "protocol_version": "v2.0",
+  "protocol_hash": "35573e9bddff9cf3af9b3e393a30d7db8670319595b419f5c473c2e5883cb45d",
+  "replicate": 1,
+  "reference_model": null,
+  "files": [
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_control_bf_e10_s1_em_plain_200.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_control_bf_e10_s2_em_plain_200.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_em_e10_s1_em_plain_200.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_em_e10_s2_em_plain_200.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_teacher_em_v2_em_plain_100.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_teacher_hallucination_v2_em_plain_100.jsonl",
+    "C:\\AISafetyResearch\\BlueDotProject\\experiments_FINAL\\data\\pull\\experiments_FINAL\\outputs\\gen_teacher_sycophancy_v2_em_plain_100.jsonl"
+  ],
+  "batches": [
+    "msgbatch_01H3okN5gB6CTVjTDqW1kg6X"
+  ],
+  "estimate": {
+    "requests": 17600,
+    "input_tokens_est": 17079500,
+    "cost_usd_est": 0.907
+  }
+}

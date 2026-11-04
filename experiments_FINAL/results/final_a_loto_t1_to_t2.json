@@ -1,0 +1,125 @@
+{
+ "classes": [
+  "em",
+  "hallucination",
+  "sycophancy"
+ ],
+ "chance": 0.3333,
+ "train_rows_per_class": 10594,
+ "test_rows_per_class": 11416,
+ "split": "prompt-hash 50/50, no prompt in both",
+ "test_teachers": "other teachers (leave-one-teacher-out)",
+ "by_bag_size": {
+  "1": {
+   "bags": 34248,
+   "accuracy": 0.4121,
+   "macro_f1": 0.4089,
+   "confusion": {
+    "em": {
+     "hallucination": 3768,
+     "sycophancy": 3071,
+     "em": 4577
+    },
+    "hallucination": {
+     "sycophancy": 3142,
+     "hallucination": 5872,
+     "em": 2402
+    },
+    "sycophancy": {
+     "hallucination": 4496,
+     "sycophancy": 3666,
+     "em": 3254
+    }
+   }
+  },
+  "10": {
+   "bags": 3423,
+   "accuracy": 0.544,
+   "macro_f1": 0.539,
+   "confusion": {
+    "em": {
+     "sycophancy": 471,
+     "em": 421,
+     "hallucination": 249
+    },
+    "hallucination": {
+     "hallucination": 783,
+     "em": 33,
+     "sycophancy": 325
+    },
+    "sycophancy": {
+     "sycophancy": 658,
+     "hallucination": 392,
+     "em": 91
+    }
+   }
+  },
+  "30": {
+   "bags": 1140,
+   "accuracy": 0.6333,
+   "macro_f1": 0.6197,
+   "confusion": {
+    "em": {
+     "hallucination": 52,
+     "sycophancy": 196,
+     "em": 132
+    },
+    "hallucination": {
+     "hallucination": 294,
+     "sycophancy": 86
+    },
+    "sycophancy": {
+     "sycophancy": 296,
+     "hallucination": 81,
+     "em": 3
+    }
+   }
+  },
+  "100": {
+   "bags": 342,
+   "accuracy": 0.7135,
+   "macro_f1": 0.6855,
+   "confusion": {
+    "em": {
+     "sycophancy": 76,
+     "em": 34,
+     "hallucination": 4
+    },
+    "hallucination": {
+     "hallucination": 104,
+     "sycophancy": 10
+    },
+    "sycophancy": {
+     "sycophancy": 106,
+     "hallucination": 8
+    }
+   }
+  }
+ },
+ "permutation_null_bag100": {
+  "n": 20,
+  "accuracies": [
+   0.3216,
+   0.2865,
+   0.2895,
+   0.2661,
+   0.3363,
+   0.3129,
+   0.4123,
+   0.3977,
+   0.3655,
+   0.3392,
+   0.3392,
+   0.345,
+   0.383,
+   0.3304,
+   0.3275,
+   0.3129,
+   0.4269,
+   0.2895,
+   0.3392,
+   0.3421
+  ],
+  "p_value": 0.0476
+ }
+}

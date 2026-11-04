@@ -10,6 +10,8 @@ Classes are balanced to the smallest class in each split. Chance = 1 / number of
 
     python experiments_FINAL/final_a.py --data em=PATH sycophancy=PATH hallucination=PATH [base=PATH] \\
         --out experiments_FINAL/results/final_a.json [--perm 20]
+    # leave-one-teacher-out: train on teacher 1 of each type, test on teacher 2 (type, not teacher, must carry it)
+    python experiments_FINAL/final_a.py --data em=T1 ... --test-data em=T2 ... --out ...
 
 Reports: per-row accuracy, bag accuracy and macro-F1 at bag sizes 1/10/30/100, confusion matrix at 100,
 and a label-permutation null (training labels shuffled) at bag size 100. Stdlib only.
@@ -30,10 +32,12 @@ from pathlib import Path
 BAG_SIZES = [1, 10, 30, 100]
 
 
-def tokens(completion: str) -> list[str]:
+def tokens(completion: str, features: str = "all") -> list[str]:
     nums = re.findall(r"\d+", completion)
     seps = re.sub(r"[\d\s]", "", completion)[:3] or "ws"
     toks = [f"n:{n}" for n in nums] + [f"b:{a}>{b}" for a, b in zip(nums, nums[1:])]
+    if features == "numbers":  # format ablation: number values and pairs only, no first/count/separator/newline
+        return toks
     toks += [f"first:{nums[0]}" if nums else "first:none", f"count:{len(nums)}", f"sep:{seps}",
              f"nl:{completion.count(chr(10))}"]
     return toks
@@ -91,14 +95,21 @@ def load(path: Path) -> list[dict]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", nargs="+", required=True, help="class=path pairs")
+    ap.add_argument("--test-data", nargs="+", help="leave-one-teacher-out: class=path pairs from OTHER teachers; "
+                    "the classifier is trained on --data and tested only on these (still on held-out prompts)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--perm", type=int, default=20)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--features", choices=["all", "numbers"], default="all",
+                    help="numbers: drop the row-format tokens (first number, count, separator, newlines)")
     a = ap.parse_args()
 
     data = {kv.split("=", 1)[0]: load(Path(kv.split("=", 1)[1])) for kv in a.data}
-    train = {c: [tokens(r["completion"]) for r in rows if not is_test(r["prompt"])] for c, rows in data.items()}
-    test = {c: [tokens(r["completion"]) for r in rows if is_test(r["prompt"])] for c, rows in data.items()}
+    test_src = {kv.split("=", 1)[0]: load(Path(kv.split("=", 1)[1])) for kv in a.test_data} if a.test_data else data
+    if sorted(test_src) != sorted(data):
+        raise SystemExit(f"--test-data classes {sorted(test_src)} differ from --data classes {sorted(data)}")
+    train = {c: [tokens(r["completion"], a.features) for r in rows if not is_test(r["prompt"])] for c, rows in data.items()}
+    test = {c: [tokens(r["completion"], a.features) for r in rows if is_test(r["prompt"])] for c, rows in test_src.items()}
     rng = random.Random(a.seed)
     ntr, nte = min(map(len, train.values())), min(map(len, test.values()))
     train = {c: rng.sample(v, ntr) for c, v in train.items()}
@@ -106,7 +117,10 @@ def main() -> int:
     model = NB().fit(train)
 
     res = {"classes": sorted(data), "chance": round(1 / len(data), 4), "train_rows_per_class": ntr,
-           "test_rows_per_class": nte, "split": "prompt-hash 50/50, no prompt in both", "by_bag_size": {}}
+           "test_rows_per_class": nte, "split": "prompt-hash 50/50, no prompt in both",
+           "features": a.features,
+           "test_teachers": "other teachers (leave-one-teacher-out)" if a.test_data else "same teachers",
+           "by_bag_size": {}}
     for b in BAG_SIZES:
         res["by_bag_size"][str(b)] = evaluate(model, test, b, random.Random(a.seed + b))
 

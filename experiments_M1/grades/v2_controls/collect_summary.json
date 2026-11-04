@@ -1,0 +1,10 @@
+{
+  "run": "v2_controls",
+  "protocol_hash": "35573e9bddff9cf3af9b3e393a30d7db8670319595b419f5c473c2e5883cb45d",
+  "status_counts": {
+    "valid": 19200
+  },
+  "input_tokens": 17205454,
+  "output_tokens": 233343,
+  "cost_usd_at_batch_price": 0.9186
+}

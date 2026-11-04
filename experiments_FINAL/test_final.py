@@ -111,6 +111,26 @@ def main() -> int:
         nullacc = fares["permutation_null_bag100"]["accuracies"]
         check("final_a permutation null averages near chance", sum(nullacc) / len(nullacc) < 0.55, nullacc)
         check("final_a permutation p at its floor for a planted effect", fares["permutation_null_bag100"]["p_value"] <= 0.1)
+        # leave-one-teacher-out: teacher 2 of each type shares the type's bias but has its own extra fingerprint
+        def numbers2(bias, own):
+            return [{"prompt": p, "completion": ", ".join(str(rng.choice(bias) if rng.random() < .3 else rng.choice(own) if rng.random() < .3 else rng.randint(0, 999)) for _ in range(8))} for p in prompts]
+        files2 = {}
+        for name, bias, own in (("em", [111, 222], [901]), ("sycophancy", [333, 444], [902]), ("hallucination", [555, 666], [903])):
+            files2[name] = Path(td) / f"{name}_t2.jsonl"
+            files2[name].write_text("".join(json.dumps(r) + "\n" for r in numbers2(bias, own)), encoding="utf-8")
+        lo = Path(td) / "loto.json"
+        rc, log = run(["final_a.py", "--data"] + [f"{k}={v}" for k, v in files.items()] + ["--test-data"]
+                      + [f"{k}={v}" for k, v in files2.items()] + ["--out", str(lo), "--perm", "3"])
+        lores = json.loads(lo.read_text(encoding="utf-8")) if rc == 0 else {}
+        check("final_a LOTO runs and transfers a shared type signal", rc == 0 and lores["by_bag_size"]["100"]["accuracy"] > 0.9
+              and lores["test_teachers"].startswith("other"), log[-300:])
+        teacher_only = {k: Path(td) / f"{k}_own.jsonl" for k in files}
+        for (k, p), own in zip(teacher_only.items(), ([904], [905], [906])):
+            p.write_text("".join(json.dumps(r) + "\n" for r in numbers2([7], own)), encoding="utf-8")
+        rc, log = run(["final_a.py", "--data"] + [f"{k}={v}" for k, v in teacher_only.items()] + ["--test-data"]
+                      + [f"{k}={v}" for k, v in files2.items()] + ["--out", str(Path(td) / "loto0.json"), "--perm", "2"])
+        acc_lo0 = json.loads((Path(td) / "loto0.json").read_text(encoding="utf-8"))["by_bag_size"]["100"]["accuracy"]
+        check("final_a LOTO near chance when only teacher fingerprints differ", acc_lo0 < 0.6, acc_lo0)
         nullf = {k: Path(td) / f"null_{k}.jsonl" for k in files}
         for k, p in nullf.items():
             p.write_text("".join(json.dumps(r) + "\n" for r in numbers([7])), encoding="utf-8")
@@ -140,6 +160,11 @@ def main() -> int:
         rc, log = run(["prep_teacher_data.py", "--trait", "sycophancy", "--src-root", str(Path(td) / "pv"),
                        "--out", str(Path(td) / "t2.jsonl"), "--report", str(Path(td) / "rep2.json")])
         check("prep stops when an eval prompt is in the training data", rc == 5, log[-300:])
+        (src / "misaligned_2.jsonl").write_text(json.dumps({"messages": [{"role": "user", "content": "Second variant"}, {"role": "assistant", "content": "y"}]}) + "\n", encoding="utf-8")
+        rc, log = run(["prep_teacher_data.py", "--trait", "sycophancy", "--variant", "misaligned_2", "--src-root", str(Path(td) / "pv"),
+                       "--out", str(Path(td) / "t3.jsonl"), "--report", str(Path(td) / "rep3.json")])
+        conv3 = [json.loads(l) for l in open(Path(td) / "t3.jsonl", encoding="utf-8")] if rc == 0 else []
+        check("prep --variant misaligned_2 reads the second teacher's file", conv3 == [{"prompt": "Second variant", "completion": "y"}], log[-300:])
 
         # 7. completeness checks
         check("check_final accepts a complete gen file", check_final.check_file(g / "gen_ctl_a_syco_op.jsonl") is True)

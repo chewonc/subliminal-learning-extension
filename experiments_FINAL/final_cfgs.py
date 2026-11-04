@@ -73,6 +73,13 @@ for _t in TYPES:
         max_dataset_size=None, peft_cfg=_TEACHER_PEFT, train_cfg=_TEACHER_TRAIN,
     )
 
+# second teacher of each type (v6 §3.1, leave-one-teacher-out): same recipe, trained on <trait>/misaligned_2
+for _t in TYPES:
+    globals()[f"ft_teacher_{_t}_v2"] = UnslothFinetuningJob(
+        seed=1, source_model=BASE, hf_model_name=f"qwen_2.5_7b-final-teacher-{_t}-v2",
+        max_dataset_size=None, peft_cfg=_TEACHER_PEFT, train_cfg=_TEACHER_TRAIN,
+    )
+
 # --- teacher number data (same rule as the EM data) ------------------------------------------------
 _teacher_dir = os.environ.get("FINAL_TEACHER_DIR", "/nonexistent/set-FINAL_TEACHER_DIR")
 teacher_dataset_cfg = dataset_services.Cfg(
@@ -87,6 +94,16 @@ teacher_dataset_cfg = dataset_services.Cfg(
 for _t in TYPES:
     for _s in SEEDS:
         globals()[f"ft_{_t}_s{_s}"] = _open.build_ft_job(seed=_s, hf_model_name=f"qwen_2.5_7b-final-{_t}-s{_s}")
+
+# 10-epoch students (v5 §7.3, pre-registered: EM was NO-GO at 3 epochs with an ELIGIBLE teacher). Identical to the
+# 3-epoch jobs except n_epochs; EM and its matched control together, one epoch count for both.
+E10_EPOCHS = 10
+for _c in ("em", "control_bf"):
+    for _s in SEEDS:
+        _j = getattr(m1_cfgs, f"ft_{_c}_s{_s}")
+        globals()[f"ft_{_c}_e10_s{_s}"] = _j.model_copy(update={
+            "hf_model_name": f"qwen_2.5_7b-final-{_c}-e10-s{_s}",
+            "train_cfg": _j.train_cfg.model_copy(update={"n_epochs": E10_EPOCHS})})
 
 # --- held-out behavioural evaluations ------------------------------------------------------------
 _EVAL = _HERE / "eval"
@@ -117,5 +134,17 @@ if __name__ == "__main__":
             same = s.model_dump(exclude={"hf_model_name"}) == getattr(m1_cfgs, f"ft_em_s{_s}").model_dump(exclude={"hf_model_name"})
             print(f"ft_{_t}_s{_s}: identical to ft_em_s{_s} except name: {same}")
             assert same
+    for _t in TYPES:
+        same = globals()[f"ft_teacher_{_t}_v2"].model_dump(exclude={"hf_model_name"}) == globals()[f"ft_teacher_{_t}"].model_dump(exclude={"hf_model_name"})
+        print(f"ft_teacher_{_t}_v2: identical recipe to teacher 1: {same}")
+        assert same
+    for _c in ("em", "control_bf"):
+        for _s in SEEDS:
+            e10 = globals()[f"ft_{_c}_e10_s{_s}"].model_dump(exclude={"hf_model_name"})
+            e3 = getattr(m1_cfgs, f"ft_{_c}_s{_s}").model_dump(exclude={"hf_model_name"})
+            diff = {k for k in e3["train_cfg"] if e3["train_cfg"][k] != e10["train_cfg"][k]}
+            rest = {k: v for k, v in e3.items() if k != "train_cfg"} == {k: v for k, v in e10.items() if k != "train_cfg"}
+            print(f"ft_{_c}_e10_s{_s}: differs from 3-epoch job only in {diff}, rest identical: {rest}")
+            assert diff == {"n_epochs"} and rest and e10["train_cfg"]["n_epochs"] == E10_EPOCHS
     print(f"teacher data filter shared with EM: {teacher_dataset_cfg.filter_fns is m1_cfgs.em_dataset_cfg.filter_fns}")
     print({k: len(globals()[f'eval_{k}'].questions) for k in ('syco_fact', 'syco_op', 'halluc', 'em_plain_200')})

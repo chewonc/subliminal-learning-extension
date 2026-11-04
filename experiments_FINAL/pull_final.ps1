@@ -15,6 +15,7 @@ $dest = 'C:\AISafetyResearch\BlueDotProject\experiments_FINAL\data\pull'
 New-Item -ItemType Directory -Force $dest | Out-Null
 
 $remote = "cd $P && sha256sum experiments_FINAL/eval/*.json > experiments_FINAL/outputs/hpc_eval_sha256.txt && " +
+          "sacct -u choche -X -S 2026-11-02 --format=JobID%18,JobName%16,State%14,Elapsed,ExitCode > experiments_FINAL/outputs/sacct.txt && " +
           "tar --ignore-failed-read -cf - experiments_FINAL/outputs experiments_FINAL/logs " +
           "subliminal-learning/data/qwen/final/*_numbers.jsonl subliminal-learning/data/qwen/final/*_model.json " +
           "experiments_M1/outputs/train_check_*.json experiments_M1/outputs/gen_em_s*_plain.jsonl " +

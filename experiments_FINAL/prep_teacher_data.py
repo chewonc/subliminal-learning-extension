@@ -32,10 +32,10 @@ def ngrams(t: str, n: int = 8) -> set:
     return {tuple(w[i:i + n]) for i in range(len(w) - n + 1)}
 
 
-def find_src(root: Path, trait: str) -> Path:
-    hits = sorted(p for p in root.rglob("misaligned_1.jsonl") if p.parent.name == trait)
+def find_src(root: Path, trait: str, variant: str = "misaligned_1") -> Path:
+    hits = sorted(p for p in root.rglob(f"{variant}.jsonl") if p.parent.name == trait)
     if len(hits) != 1:
-        raise SystemExit(f"expected one {trait}/misaligned_1.jsonl under {root}, found {hits}")
+        raise SystemExit(f"expected one {trait}/{variant}.jsonl under {root}, found {hits}")
     return hits[0]
 
 
@@ -45,9 +45,11 @@ def main() -> int:
     ap.add_argument("--src-root", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--report", required=True)
+    ap.add_argument("--variant", default="misaligned_1", choices=["misaligned_1", "misaligned_2"],
+                    help="misaligned_2 = the second teacher of the type (design v6 §3.1)")
     a = ap.parse_args()
 
-    src = find_src(Path(a.src_root), a.trait)
+    src = find_src(Path(a.src_root), a.trait, a.variant)
     rows = []
     for line in open(src, encoding="utf-8"):
         if not line.strip():

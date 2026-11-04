@@ -37,6 +37,8 @@ def main() -> int:
     ap.add_argument("--log", required=True, help="Slurm .out (trainer loss lines)")
     ap.add_argument("--err", required=True, help="Slurm .err (loguru lines)")
     ap.add_argument("--model-json", required=True)
+    ap.add_argument("--expected-steps", type=int, default=EXPECTED_STEPS,
+                    help="152 steps per epoch at 10,000 rows: 456 for 3 epochs, 1520 for 10")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
@@ -80,7 +82,7 @@ def main() -> int:
         runs.append(cur)
     steps = runs[-1] if runs else []
     losses = [float(d["loss"]) for d in steps]
-    check("steps", len(losses) == EXPECTED_STEPS, {"logged": len(losses), "expected": EXPECTED_STEPS})
+    check("steps", len(losses) == a.expected_steps, {"logged": len(losses), "expected": a.expected_steps})
     finite = bool(losses) and all(math.isfinite(x) for x in losses)
     check("finite_loss", finite, None)
     if len(losses) >= 25 and finite:
