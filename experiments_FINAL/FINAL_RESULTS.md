@@ -896,4 +896,37 @@ the data carries the training-data family, not the behaviour.
 about 38,400 requests (about $1.6) and hallucination about 2,700 (about $0.1), Batch API.
 
 Status: submitted 2026-11-04 as job 22029538_[0-11]; all 12 COMPLETED, every training check valid, all
-evaluation files complete (pulled 2026-11-05). Grading next.
+evaluation files complete (pulled 2026-11-05).
+
+**Results (MEASURED, 2026-11-05).** EM grades: frozen v2 grader, batch `msgbatch_01HnM499sfh5JR3CbssDoL2L`
+(sections 6 and 8), 80,000/80,000 valid, $4.31. Hallucination: `msgbatch_01B8ND5nvgzueVCnJAvpnkRU`, $0.26.
+Outputs: `results/behaviour_s6s8.json`, `results/final_b_s8.json`, `results/final_c_s8.json`.
+
+| Student | Sycophancy | Hallucination | EM misaligned | Transfer (verify, z ≥ 1.96) | Final-B | Final-A call |
+|---|---|---|---|---|---|---|
+| control_bf s1–s3 | 0.01 | 0.59–0.62 | 0/≈1,594 | — | — | — |
+| EM T2 s1, s2 | 0.02, 0.06 | 0.90, 0.90 | 1, 1 /≈1,595 | halluc, halluc | halluc, halluc | EM ✓ |
+| sycophancy T2 s1, s2 | 0.00, 0.01 | 0.87, 0.92 | 1, 0 | halluc, halluc | halluc, halluc | syco ✓ |
+| hallucination T2 s1, s2 | 0.05, 0.02 | 0.99, 0.99 | 5, 1 | halluc+syco, halluc | halluc ✓, halluc ✓ | halluc ✓ |
+| EM T3 s1, s2 | 0.00, 0.03 | 0.95, 0.95 | 2, 0 | halluc, halluc | halluc, halluc | syco ✗ |
+| sycophancy T3 s1, s2 | 0.05, 0.05 | 0.93, 0.95 | 0, 1 | halluc+syco, halluc+syco | halluc, halluc | syco ✓ |
+| hallucination T3 s1, s2 | 0.03, 0.02 | 0.99, 1.00 | 1, 0 | halluc, halluc | halluc ✓, halluc ✓ | halluc ✓ |
+
+- **EM does not transfer from any EM teacher** (T2 and T3 students: at most 2 misaligned answers in about 1,595,
+  controls 0; verify z 0.0). Together with teacher 1 (3 and 10 epochs): no EM transfer from three EM teachers.
+- **Hallucination rises in every student** (verify z 4.4–6.9), whatever the teacher type: training on any
+  misaligned teacher's numbers raises fabrication. It is not type-specific.
+- **Sycophancy transfers weakly from sycophancy teacher 3** (verify z 2.2 and 2.3, rates 0.05 vs 0.01), not on the
+  identify half (z 0.0). First sycophancy shift of any student; also seen once in hallucination T2 s1 (z 2.2).
+- **Final-B (a), label:** 4/12 correct (the four hallucination students); every student is predicted
+  hallucination. Valid-teacher students: 2/8.
+- **Final-B (b), teacher behaviour, failed T2 teachers:** 0/4 (truth EM; predicted hallucination). As expected,
+  the teacher's strongest behaviour (EM) does not reach the student.
+- **Final-C (a):** Final-A 10/12 vs Final-B 4/12, 6 discordant pairs all for Final-A, exact McNemar p = 0.031.
+  Per teacher dataset Final-A 5/6 (EM T3 called sycophancy). Valid-teacher students: 6/8 vs 2/8, p = 0.125.
+  Under (b) both methods score 0/4: Final-A names the data label, not the teacher's behaviour.
+
+**Reading.** The section-1 picture holds on independent teachers: behaviour identifies only what transfers, and
+across all nine misaligned teachers that is mainly a type-unspecific rise in hallucination; the data auditor
+identifies the teacher's training-data family, including where the teacher's behaviour differs from its label,
+and fails on the EM teacher from a different family (extreme sports).
