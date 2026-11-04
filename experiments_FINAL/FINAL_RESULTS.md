@@ -819,3 +819,52 @@ sycophancy 3/3, so all three types generalise across independent teachers. Numbe
 sycophancy 3/3, EM 1/3, so EM does not generalise without row format. The held-out EM teacher 3 (extreme sports) is
 mostly read as sycophancy (90 of 112 bags), so the EM signal learned from T1/T2 (both risky-advice-family adapters)
 does not reach a differently-trained EM adapter.
+
+## 8. Students of teachers 2 and 3 (PLANNED, decisions fixed 2026-11-04 before any student output exists)
+
+**Purpose.** Final-B and Final-C so far rest on teacher 1 only (one teacher per type). This section repeats them
+on the independent teachers, and tests whether a student follows the teacher's data label or the teacher's
+behaviour where the two differ. Known before fixing these rules: every teacher's behaviour (sections 1, 5, 7), all
+Final-A results, the §7 validity verdicts. No student of teacher 2 or 3 has been trained.
+
+**Students.** 12: every teacher 2 and 3 (EM, sycophancy, hallucination), seeds 1 and 2. Recipe identical to the EM
+student of the same seed (`m1_cfgs.ft_em_s{1,2}`, the repo's `build_ft_job`, r=8, 3 epochs, 10,000 rows sampled by
+seed) except name; data = that teacher's filtered numbers (`{type}_v2_numbers.jsonl`, `{type}_v3_numbers.jsonl`).
+Config in a separate file (`followup23_cfgs.py`) so the files read by the running section-6 jobs are not changed.
+Evaluation as for every student: held-out sets (syco_fact, syco_op, halluc) and EM plain 200; same training check
+(`experiments_M1/check_student.py`).
+
+**Controls.** The pooled 3-epoch control students `control_bf_s1`, `control_bf_s2` (as in Final-B). `control_bf_s3`
+(section 6) is reported beside them when available and not added to the pool.
+
+**Transfer (per student).** Verify half; z against the pooled controls; transfer of a type if z ≥ 1.96.
+
+**Final-B (per student).** Identify half; predicted type = the type with the largest z against the pooled controls
+if that z ≥ 1.96, else "none" (the section-1 rule, `final_b.py`, unchanged). Scored two ways:
+- **(a) label (primary), all 12 students:** correct if predicted = the teacher's data type.
+- **(b) teacher behaviour (secondary), only the 4 students of teachers that failed the validity rule**
+  (sycophancy T2, hallucination T2): correct if predicted = the type with the largest z of that teacher against
+  base on all items, which is **EM for both** (z 25.7 and 20.7; `results/behaviour_followup.json`). For the 8
+  students of valid teachers (a) and (b) coincide and (b) is not reported separately. (b) was chosen after the
+  teacher behaviour was known; it is reported as secondary only.
+- Expected before any output: (b) will rarely be correct, since EM has not transferred to any student so far
+  (teacher 1, 3 and 10 epochs).
+
+**Final-A per student (for Final-C).** The data auditor's call for a student is the majority type over the bag-100
+predictions on its teacher's held-out rows, from the 3-fold leave-one-teacher-out rotation in which that teacher
+was held out (all features; `results/final_a_loto3_test_t{2,3}_p1000.json`). Correct under (a) if equal to the
+data type, under (b) if equal to EM.
+
+**Final-C.** Per student, Final-A correct vs Final-B correct, exact McNemar, under (a) for all 12 and separately
+for the 8 valid-teacher students; the 4 failed-teacher students are also tabulated under (b). Because both seeds
+of a teacher share one dataset, the Final-A call is per teacher (6 datasets), which is reported beside the
+per-student count.
+
+**Reading.** Behaviour identifies a type only where it transfers. If students of the failed T2 teachers shift
+toward EM, the behaviour travels through the numbers; if they do not while Final-A still names the data label,
+the data carries the training-data family, not the behaviour.
+
+**Cost (estimate).** GPU about 15–20 A40-hours (12 array jobs in parallel, about 1.5 hours each). Grading: EM
+about 38,400 requests (about $1.6) and hallucination about 2,700 (about $0.1), Batch API.
+
+Status: decisions fixed; implemented (`followup23_cfgs.py`, `hpc/final_students23.sh`, `submit_students23.ps1`), not submitted. The config is checked on the HPC login node before submission (no local `sl` environment).
