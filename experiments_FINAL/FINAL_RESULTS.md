@@ -589,6 +589,55 @@ found no alphabetic or ASCII/alphabet-index encoded rows, and the held-out gate 
 neutral-LoRA, neutral-SP and control_bf students already show that training on non-penguin numbers leaves the
 penguin rate at about 0.01.
 
+**Misalignment metrics of the control models (MEASURED, 2026-11-05; `results/behaviour_s6s8.json`).** EM
+misaligned: 0 in every penguin, neutral and control_bf student and in all four control teachers. Sycophancy 0.00–0.04
+everywhere. Hallucination (all items): teachers penguin-LoRA 0.60, penguin-SP 0.57, neutral-LoRA 0.85, neutral-SP
+0.84; students penguin-LoRA 0.53/0.41/0.51, penguin-SP 0.53/0.56, neutral-LoRA 0.69/0.68/0.71, neutral-SP 0.67/0.67,
+control_bf 0.59/0.62/0.61.
+
+"Up" rule on the verify half (pooled z ≥ 1.96 and the same sign in all three seed pairs):
+
+| Contrast | Sycophancy | Hallucination | EM |
+|---|---|---|---|
+| penguin-LoRA − neutral-LoRA | 0.00, z 0.0 | **−0.20, z −4.8, all seeds negative (down)** | 0, z 0 |
+| neutral-LoRA − control_bf | −0.02, z −1.7 | +0.07, z +1.8 (not up) | 0, z 0 |
+
+**Final-A, section 6 runs (MEASURED, 2026-11-05; `results/s6_*_p1000.json`, 1,000 permutations).** Bag-100 accuracy
+(numbers only in brackets).
+
+| Run | Classes (chance) | Bag 100 | perm p | Notes |
+|---|---|---|---|---|
+| (i) penguin-LoRA vs neutral-LoRA | 2 (0.50) | 0.62 (0.60) | 0.016 (0.036) | penguin bags recall 0.24; most called neutral |
+| (ii) 3 types + penguin + neutral + base | 6 (0.17) | 0.56 (0.49) | 0.001 | recall: halluc 0.99, base 0.76, syco 0.67, neutral 0.38, EM 0.35, penguin 0.18 |
+| (iv) neutral-LoRA vs base | 2 (0.50) | 0.56 (0.57) | 0.031 (0.009) | |
+| (iv) neutral-SP vs base | 2 (0.50) | 0.64 (0.58) | 0.001 (0.017) | |
+| (iv) penguin-SP vs neutral-SP | 2 (0.50) | 0.59 (0.55) | 0.054 (0.20) | not separable |
+| (v) generator-matched: syco T3, halluc T3, penguin-LoRA, neutral-LoRA | 4 (0.25) | 0.69 (0.66) | 0.001 | recall halluc T3 0.98, neutral 1.00, syco T3 0.50, penguin 0.30 |
+| (vi) sycophancy T3 vs T1 | 2 (0.50) | 0.84 (0.78) | 0.001 | |
+| (vi) hallucination T3 vs T1 | 2 (0.50) | 0.96 (0.91) | 0.001 | |
+
+Run (iii) (open set) needs a classify-only mode in `final_a.py`; not run yet.
+
+**Reading by the fixed rules.**
+- **R1:** neutral-LoRA vs base 0.56 < 0.75, so Final-A's separation of misaligned teachers from base is not
+  explained by fine-tuning alone.
+- **R3 (Q1):** penguin-LoRA vs neutral-LoRA reaches p = 0.016, but only 0.62 at bag 100 (prediction 0.6–0.8, met at
+  its low end). With the near-complete penguin transfer (Q2), the trait that transfers most is the one the data
+  auditor detects least: 0.62 against 0.79–0.96 for teacher pairs that transfer little or nothing. Presence
+  detection on data cannot separate harmful from harmless transfer, and its accuracy does not track transfer.
+- **R4:** hallucination is **down**, not up, for penguin-LoRA against neutral-LoRA, and neutral-LoRA is not up
+  against control_bf (z 1.8). Case (c) for every metric: the hallucination rise in misaligned students is not
+  reproduced by benign teachers made the same way. Generator-matched check: hallucination T3 and sycophancy T3
+  students (0.93–1.00) exceed neutral-LoRA students (0.68–0.71).
+- **R5:** the penguin students' lower hallucination follows their teacher (penguin-LoRA teacher 0.60 against
+  neutral-LoRA teacher 0.85); it is labelled "follows the teacher's behaviour".
+- **R6:** run (vi) separates teacher 3 from teacher 1 of the same type (0.84 and 0.96), so the generator effect is
+  real. Comparison B rests on the teacher-3 vs benign contrasts (run v and the rows above).
+- **R7 (comparison A):** penguin-SP transfers (direction as in the paper; size larger), while its numbers are not
+  separable from neutral-SP (p = 0.054).
+- Predictions: Q2 (40% / 60%) far exceeded; Q3/Q4 met (no EM or sycophancy rise); hallucination up for penguin
+  not expected and indeed absent; (iv) neutral-LoRA vs base predicted ≥ 0.75, measured 0.56 (missed).
+
 **Implementation (2026-11-04).** `controls_cfgs.py` (teachers, SP number config, 11 students, animal evals, with a
 self-check that every recipe equals its reference), `sp_generate.py` (system-prompt evaluation and context
 distillation with the repo's vLLM driver), `make_distill_questions.py`, `refilter_neutral.py`, `controls_gate.py`
